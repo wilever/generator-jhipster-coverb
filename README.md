@@ -85,7 +85,7 @@ Apache-2.0 © [Wilever Gómez]
 
 [npm-image]: https://img.shields.io/npm/v/generator-jhipster-coverb.svg
 [npm-url]: https://npmjs.org/package/generator-jhipster-coverb
-[travis-image]: https://travis-ci.org/jhipster-latino/generator-jhipster-coverb.svg?branch=master
-[travis-url]: https://travis-ci.org/jhipster-latino/generator-jhipster-coverb
+[travis-image]: https://travis-ci.org/jhipster-latino/coverb.svg?branch=master
+[travis-url]: https://travis-ci.org/jhipster-latino/coverb
 [daviddm-image]: https://david-dm.org/jhipster-latino/generator-jhipster-coverb.svg?theme=shields.io
 [daviddm-url]: https://david-dm.org/jhipster-latino/generator-jhipster-coverb
