@@ -81,11 +81,11 @@ You can add your own cover and help us to grow
 
 # License
 
-Apache-2.0 © [Wilever Gómez]
+Apache-2.0 © [jhipster_latino]
 
 [npm-image]: https://img.shields.io/npm/v/generator-jhipster-coverb.svg
 [npm-url]: https://npmjs.org/package/generator-jhipster-coverb
 [travis-image]: https://travis-ci.org/jhipster-latino/coverb.svg?branch=master
 [travis-url]: https://travis-ci.org/jhipster-latino/coverb
-[daviddm-image]: https://david-dm.org/jhipster-latino/generator-jhipster-coverb.svg?theme=shields.io
+[daviddm-image]: https://david-dm.org/jhipster-latino/generator-jhipster-coverb.svg
 [daviddm-url]: https://david-dm.org/jhipster-latino/generator-jhipster-coverb
