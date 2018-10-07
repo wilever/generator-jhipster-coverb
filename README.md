@@ -1,4 +1,4 @@
-# coverb
+# generator-jhispter-coverb
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
 > A jhipster module that generates a pages for your jhipster application
 
