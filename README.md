@@ -2,6 +2,8 @@
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
 > A jhipster module that generates a pages for your jhipster application
 
+[feature-image][/generators/app/templates/default/content/images/coverb-feature.png]
+
 # Introduction
 
 - This is a [JHipster](http://jhipster.github.io/) module.
