@@ -9,12 +9,12 @@
     "jhipster",
     "jhipster-module",
     "jhipster-latino",
-    "cover",
+    "coverb",
     "bootstrap",
     "Twitter Bootstrap",
     "Angular"
   ],
-  "homepage": "https://github.com/jhipster-latino/generator-jhipster-coverb",
+  "homepage": "https://github.com/jhipster-latino/generator-jhispter-coverb",
   "author": {
     "name": "Wilever Gómez",
     "email": "wilevergomez@gmail.com",
@@ -62,6 +62,6 @@
   },
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/jhipser-latino/generator-jhipster-coverb/issues"
+    "url": "https://github.com/jhipster-latino/generator-jhipster-coverb/issues"
   }
 }
