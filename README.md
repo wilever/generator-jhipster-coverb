@@ -1,4 +1,4 @@
-# generator-jhipster-coverb
+# generator-jhispter-coverb
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
 > A jhipster module that generates a pages for your jhipster application
 
@@ -86,7 +86,6 @@ You can add your own cover and help us to grow
 Apache-2.0 ©
 
 ## Cover type
-
 ### Resume
 ![resume](/generators/app/templates/default/content/images/resume.png)
 ### Company
@@ -95,7 +94,7 @@ Apache-2.0 ©
 
 [npm-image]: https://img.shields.io/npm/v/generator-jhipster-coverb.svg
 [npm-url]: https://npmjs.org/package/generator-jhipster-coverb
-[travis-image]: https://travis-ci.org/jhipster-latino/generator-jhipster-coverb.svg?branch=master
-[travis-url]: https://travis-ci.org/jhipster-latino/generator-jhipster-coverb
-[daviddm-image]: https://david-dm.org/jhipster-latino/generator-jhipster-coverb.svg?theme=shields.io
+[travis-image]: https://travis-ci.org/jhipster-latino/coverb.svg?branch=master
+[travis-url]: https://travis-ci.org/jhipster-latino/coverb
+[daviddm-image]: https://david-dm.org/jhipster-latino/generator-jhipster-coverb.svg
 [daviddm-url]: https://david-dm.org/jhipster-latino/generator-jhipster-coverb
