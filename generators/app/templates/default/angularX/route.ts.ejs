@@ -1,0 +1,13 @@
+import { Route } from '@angular/router';
+import { UserRouteAccessService } from 'app/core';
+import { <%=_.upperFirst(_.camelCase(COVER_NAME))%>Component } from './component';
+
+export const <%=_.toUpper(_.snakeCase(COVER_NAME))%>_ROUTE: Route = {
+  path: '<%=ROOT_ROUTE%><%=_.kebabCase(COVER_NAME)%>',
+  component: <%=_.upperFirst(_.camelCase(COVER_NAME))%>Component,
+  data: {
+    authorities: [],
+    pageTitle: '<%=ENABLE_TRANSLATION ? _.kebabCase(COVER_NAME) +`.page.title` : _.startCase(COVER_NAME)%>'
+  },
+  canActivate: [UserRouteAccessService]
+};

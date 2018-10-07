@@ -1,0 +1,29 @@
+{
+  "name": "jhipster",
+  "version": "0.0.0",
+  "description": "Description for jhipster",
+  "private": true,
+  "license": "UNLICENSED",
+  "cacheDirectories": [
+    "node_modules"
+  ],
+  "dependencies": {
+    "name": "version",
+    "@fortawesome/free-brands-svg-icons": "5.2.0"
+  },
+  "devDependencies": {
+    "name": "version"
+  },
+  "engines": {
+    "name": "version"
+  },
+  "lint-staged": {
+    "name": "data"
+  },
+  "scripts": {
+    "name": "data"
+  },
+  "jestSonar": {
+    "name": "data"
+  }
+}

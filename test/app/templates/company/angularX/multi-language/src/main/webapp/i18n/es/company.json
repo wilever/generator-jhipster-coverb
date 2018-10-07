@@ -1,0 +1,21 @@
+{
+  "company": {
+    "page": {
+      "title": "[ES] Company"
+    },
+    "name": "[ES] Jhipster latino",
+    "description": "[ES] Development tools and courses for build better jhipster applications",
+    "service": {
+      "title": "[ES] Services",
+      "description": "[ES] What we offer?"
+    },
+    "portafolio": {
+      "title": "[ES] Portafolio",
+      "description": "[ES] What did we already created?"
+    },
+    "pricing": {
+      "title": "[ES] Pricing",
+      "description": "[ES] Choose a payment plan that works for you"
+    }
+  }
+}

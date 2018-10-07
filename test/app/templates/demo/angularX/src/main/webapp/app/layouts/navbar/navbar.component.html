@@ -1,0 +1,30 @@
+<li ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="coverb">
+                    <span>
+                        <fa-icon [icon]="'cubes'"></fa-icon>
+                        <span>Coverb</span>
+                    </span>
+                </a>
+                <ul class="dropdown-menu" ngbDropdownMenu>
+                <li>
+                    <a class="dropdown-item" routerLink="coverb/default" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                        <fa-icon [icon]="'cube'" [fixedWidth]="true"></fa-icon>
+                        <span>Default</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item" routerLink="coverb/resume" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                        <fa-icon [icon]="'cube'" [fixedWidth]="true"></fa-icon>
+                        <span>Resume</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item" routerLink="coverb/company" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                        <fa-icon [icon]="'cube'" [fixedWidth]="true"></fa-icon>
+                        <span>Company</span>
+                    </a>
+                </li>
+                <!-- jhipster-needle-add-item-to-coverb-menu - JHipster will add items to the coverb menu here -->
+                </ul>
+            </li>
+<!-- jhipster-needle-add-element-to-menu - JHipster will add new menu items here -->

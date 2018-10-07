@@ -1,0 +1,19 @@
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { <%=ANGULAR_X_APP_NAME%>SharedModule } from 'app/shared';
+import { <%=_.toUpper(_.snakeCase(COVER_NAME))%>_ROUTE, <%=_.upperFirst(_.camelCase(COVER_NAME))%>Component } from './';
+
+@NgModule({
+    imports: [
+      <%=ANGULAR_X_APP_NAME%>SharedModule,
+      RouterModule.forRoot(
+        [ <%=_.toUpper(_.snakeCase(COVER_NAME))%>_ROUTE ],
+        { useHash: true })
+    ],
+    declarations: [
+      <%=_.upperFirst(_.camelCase(COVER_NAME))%>Component,
+    ],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
+})
+
+export class <%=ANGULAR_X_APP_NAME%><%=_.upperFirst(_.camelCase(COVER_NAME))%>Module {}
