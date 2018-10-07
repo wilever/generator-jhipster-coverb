@@ -2,7 +2,9 @@
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
 > A jhipster module that generates a pages for your jhipster application
 
-# Introduction
+![feature-image](/generators/app/templates/default/content/images/coverb-feature.png)
+
+## Introduction
 
 - This is a [JHipster](http://jhipster.github.io/) module.
 
@@ -12,76 +14,83 @@
 
 To learn more about this module, see [wiki](https://github.com/jhipster-latino/coverb/wiki).
 
-# Prerequisites
+## Prerequisites
 
 - As this is a [JHipster](http://www.jhipster.tech/) module, we expect you to have an existing [JHipster app](https://www.jhipster.tech/creating-an-app/).
 - Jhipster version must be greater or equal to 5.2.0
 
-# Installation
+## Installation
 
-## with NPM
+### with NPM
 
 To install this module:
 
-```bash
+```
 npm install -g generator-jhipster-coverb
 ```
 
 To update this module:
 
-```bash
+```
 npm update -g generator-jhipster-coverb
 ```
 
-## with Yarn
+### with Yarn
 
 To install this module:
 
-```bash
+```
 yarn global add generator-jhipster-coverb
 ```
 
 To update this module:
 
-```bash
+```
 yarn global upgrade generator-jhipster-coverb
 ```
 
-# Usage
+## Usage
 
 1. [Create a JHipster app](https://www.jhipster.tech/creating-an-app/) using `yo jhipster`, or `jhipster`
 2. Run coverb on your JHipster app path:
 
-```bash
+```
 yo jhipster-coverb
 ```
-3. Select your cover type:
-```bash
+3. Select your [cover type](#cover-type):
+```
 ? Which type do you prefer? (Use arrow keys)
 ❯ default 
   resume 
   company 
 ```
 4. Select your cover name:
-```bash
+```
 ? Which name do you prefer? (myOwnResume) 
 ```
 
-# Demo
+## Demo
 
 To run coverb demo on a JHipster generated application:
 
-```bash
+```
 yo jhipster-coverb:demo
 ```
 
-# Contributing
+## Contributing
 
 You can add your own cover and help us to grow
 
-# License
+## License
 
-Apache-2.0 © [jhipster_latino]
+Apache-2.0 ©
+
+## Cover type
+### Resume
+![resume](/generators/app/templates/default/content/images/resume.png)
+### Company
+![company1](/generators/app/templates/default/content/images/company1.png)
+![company2](/generators/app/templates/default/content/images/company2.png)
 
 [npm-image]: https://img.shields.io/npm/v/generator-jhipster-coverb.svg
 [npm-url]: https://npmjs.org/package/generator-jhipster-coverb
