@@ -3,6 +3,7 @@ const _ = require("lodash");
 const jhipsterUtils = require('generator-jhipster/generators/utils');
 const packageJson = require('../../package.json');
 const semver = require('semver');
+const chalk = require('chalk');
 
 module.exports = {
     writeCoverFiles,
@@ -14,8 +15,23 @@ module.exports = {
     updateFile,
     getCoverList,
     getCoverListChoices,
-    writeDemoFiles
+    writeDemoFiles,
+    printCoverbLogo
 };
+/**
+ * Print coverb logo
+ */
+function printCoverbLogo(generator) {
+    generator.log('\n');
+    generator.log(`${chalk.blue(' ######   #######  ##     ## ######## ######## ')}${chalk.black(' ########  ')}`);
+    generator.log(`${chalk.blue('##    ## ##     ## ##     ## ##       ##     ##')}${chalk.black(' ##     ## ')}`);
+    generator.log(`${chalk.blue('##       ##     ## ##     ## ##       ##     ##')}${chalk.black(' ##     ## ')}`);
+    generator.log(`${chalk.blue('##       ##     ## ##     ## ######   ######## ')}${chalk.black(' ########  ')}`);
+    generator.log(`${chalk.blue('##       ##     ##  ##   ##  ##       ##   ##  ')}${chalk.black(' ##     ## ')}`);
+    generator.log(`${chalk.blue('##    ## ##     ##   ## ##   ##       ##    ## ')}${chalk.black(' ##     ## ')}`);
+    generator.log(`${chalk.blue(' ######   #######     ###    ######## ##     ##')}${chalk.black(' ########  ')}\n`);
+    generator.log(chalk.white.bold('This is a jhipster module see more on https://www.jhipster.tech \n'));
+}
 /**
  * Get cover list as choices
  * 
@@ -63,7 +79,7 @@ function checkJhipster(generator) {
 function initializing(generator) {
     generator.debug('configuring...');
     generator.jhipsterAppConfig = generator.getJhipsterAppConfig();
-    generator.printJHipsterLogo();
+    printCoverbLogo(generator);
     checkJhipster(generator);
     generator.ENABLE_TRANSLATION = generator.jhipsterAppConfig.enableTranslation;
     generator.baseName = generator.jhipsterAppConfig.baseName;
