@@ -91,7 +91,7 @@ function writeFiles(generator) {
   );
   // Autogenerate i18n files
   if (generator.ENABLE_TRANSLATION === true) {
-    util.autoGenerateI18n(
+    util.autoGenerateI18nFiles(
       generator.COVER_NAME,
       I18N_BASE_FILE,
       generator
@@ -111,6 +111,13 @@ function postWrite(generator) {
     generator.ROOT_ROUTE,
     generator
   );
+  // Autogenerate i18n menu
+  if (generator.ENABLE_TRANSLATION === true) {
+    util.autoGenerateI18nMenu(
+      generator.COVER_NAME,
+      generator
+    );
+  }
 }
 /**
  * Get files to copy

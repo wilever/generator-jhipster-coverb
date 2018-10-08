@@ -17,7 +17,7 @@ To learn more about this module, see [wiki](https://github.com/jhipster-latino/c
 ## Prerequisites
 
 - As this is a [JHipster](http://www.jhipster.tech/) module, we expect you to have an existing [JHipster app](https://www.jhipster.tech/creating-an-app/).
-- Jhipster version must be greater or equal to 5.2.0
+- Jhipster version must be greater or equal than 5.2.0
 
 ## Installation
 

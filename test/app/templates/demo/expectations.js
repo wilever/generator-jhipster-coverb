@@ -24,7 +24,10 @@ function files(CLIENT_FRAMEWORK, ROOT_ROUTE) {
           `${CLIENT_MAIN_SRC_DIR}/app/layouts/navbar/navbar.component.html`,
           `${CLIENT_MAIN_SRC_DIR}/app/app.module.ts`,
           constant.PATH.VENDOR,
-          `package.json`
+          `package.json`,
+          `${CLIENT_MAIN_SRC_DIR}i18n/en/global.json`,
+          `${CLIENT_MAIN_SRC_DIR}i18n/es/global.json`,
+          `${CLIENT_MAIN_SRC_DIR}i18n/fr/global.json`,
         ]
       };
     case constant.CLIENT_FRAMEWORK.REACT:

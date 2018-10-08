@@ -7,7 +7,8 @@ const chalk = require('chalk');
 
 module.exports = {
     writeCoverFiles,
-    autoGenerateI18n,
+    autoGenerateI18nFiles,
+    autoGenerateI18nMenu,
     addNavBarItem,
     addAngularModule,
     initializing,
@@ -23,13 +24,13 @@ module.exports = {
  */
 function printCoverbLogo(generator) {
     generator.log('\n');
-    generator.log(`${chalk.blue(' ######   #######  ##     ## ######## ######## ')}${chalk.black(' ########  ')}`);
-    generator.log(`${chalk.blue('##    ## ##     ## ##     ## ##       ##     ##')}${chalk.black(' ##     ## ')}`);
-    generator.log(`${chalk.blue('##       ##     ## ##     ## ##       ##     ##')}${chalk.black(' ##     ## ')}`);
-    generator.log(`${chalk.blue('##       ##     ## ##     ## ######   ######## ')}${chalk.black(' ########  ')}`);
-    generator.log(`${chalk.blue('##       ##     ##  ##   ##  ##       ##   ##  ')}${chalk.black(' ##     ## ')}`);
-    generator.log(`${chalk.blue('##    ## ##     ##   ## ##   ##       ##    ## ')}${chalk.black(' ##     ## ')}`);
-    generator.log(`${chalk.blue(' ######   #######     ###    ######## ##     ##')}${chalk.black(' ########  ')}\n`);
+    generator.log(`${chalk.blue(' ######   #######  ##     ## ######## ######## ')}${chalk.green(' ########  ')}`);
+    generator.log(`${chalk.blue('##    ## ##     ## ##     ## ##       ##     ##')}${chalk.green(' ##     ## ')}`);
+    generator.log(`${chalk.blue('##       ##     ## ##     ## ##       ##     ##')}${chalk.green(' ##     ## ')}`);
+    generator.log(`${chalk.blue('##       ##     ## ##     ## ######   ######## ')}${chalk.green(' ########  ')}`);
+    generator.log(`${chalk.blue('##       ##     ##  ##   ##  ##       ##   ##  ')}${chalk.green(' ##     ## ')}`);
+    generator.log(`${chalk.blue('##    ## ##     ##   ## ##   ##       ##    ## ')}${chalk.green(' ##     ## ')}`);
+    generator.log(`${chalk.blue(' ######   #######     ###    ######## ##     ##')}${chalk.green(' ########  ')}\n`);
     generator.log(chalk.white.bold('This is a jhipster module see more on https://www.jhipster.tech \n'));
 }
 /**
@@ -129,7 +130,25 @@ function copyFiles(files, generator) {
  * @param {*} DEFAULT_FILE base to generate files
  * @param {*} generator 
  */
-function autoGenerateI18n(COVER_NAME, DEFAULT_FILE, generator) {
+function autoGenerateI18nFiles(COVER_NAME, DEFAULT_FILE, generator) {
+    generator.nativeLanguage = generator.jhipsterAppConfig.nativeLanguage;
+    generator.getAllInstalledLanguages().forEach((language) => {
+        // Generate a i18n file from default one
+        generator.currentLanguagePrefix = language === generator.nativeLanguage ? '' : (`[${_.upperCase(language)}] `);
+        generator.template(
+            DEFAULT_FILE,
+            constant.PATH.CLIENT_MAIN_SRC_DIR+'i18n/'+language+'/'+_.kebabCase(COVER_NAME)+'.json'
+        );
+    }, generator);
+}
+/**
+ * Autogenate i18n menu
+ * 
+ * @param {*} COVER_NAME cover name select by user
+ * @param {*} DEFAULT_FILE base to generate files
+ * @param {*} generator 
+ */
+function autoGenerateI18nMenu(COVER_NAME, generator) {
     const CLIENT_MAIN_SRC_DIR = constant.PATH.CLIENT_MAIN_SRC_DIR;
     generator.nativeLanguage = generator.jhipsterAppConfig.nativeLanguage;
     generator.getAllInstalledLanguages().forEach((language) => {
@@ -141,10 +160,6 @@ function autoGenerateI18n(COVER_NAME, DEFAULT_FILE, generator) {
             `"${_.kebabCase(COVER_NAME)}": "${generator.currentLanguagePrefix}${_.startCase(COVER_NAME)}",`,
             constant.NEEDLE.MENU_ADD_ELEMENT,
             generator
-        );
-        generator.template(
-            DEFAULT_FILE,
-            constant.PATH.CLIENT_MAIN_SRC_DIR+'i18n/'+language+'/'+_.kebabCase(COVER_NAME)+'.json'
         );
     }, generator);
 }
@@ -270,7 +285,7 @@ function navbarMenuItem(ITEM_NAME, NAV_BAR_ICON, ROOT_ROUTE, ENABLE_TRANSLATION,
             `|<li>
             |                    <a class="dropdown-item" routerLink="${ROOT_ROUTE}${_.kebabCase(ITEM_NAME)}" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
             |                        <fa-icon [icon]="'${NAV_BAR_ICON}'" [fixedWidth]="true"></fa-icon>
-            |                        <span${ENABLE_TRANSLATION ? ` jhiTranslate="global.menu.${_.kebabCase(ITEM_NAME)}"` : ''}>${_.startCase(ITEM_NAME)}</span>
+            |                        <span${ENABLE_TRANSLATION ? ` jhiTranslate="${_.kebabCase(ITEM_NAME)}.page.title"` : ''}>${_.startCase(ITEM_NAME)}</span>
             |                    </a>
             |                </li>`;
             break;
