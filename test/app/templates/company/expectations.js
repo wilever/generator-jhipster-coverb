@@ -36,7 +36,7 @@ function files(CLIENT_FRAMEWORK, TEST_CASE, ROOT_ROUTE) {
         `package.json`,
       ],
       CONTENT: [
-        `${CLIENT_MAIN_SRC_DIR}content/images/logo/logo-alternate.png`,
+        `${CLIENT_MAIN_SRC_DIR}content/images/logo/icons/logo-alternate.png`,
       ],
       I18N_SKIPPED: [
         `${CLIENT_MAIN_SRC_DIR}i18n`,
