@@ -163,7 +163,7 @@ function getFiles(generator) {
         {
           NAME: "LOGO_ALTERNATE",
           FROM: `${COVER_TYPE}/content/images/logo/logo-alternate.png`,
-          TO: `${CLIENT_MAIN_SRC_DIR}content/images/logo/logo-alternate.png`,
+          TO: `${CLIENT_MAIN_SRC_DIR}content/images/logo/icons/logo-alternate.png`,
           METHOD: 'CONTENT',
         }
       ];
