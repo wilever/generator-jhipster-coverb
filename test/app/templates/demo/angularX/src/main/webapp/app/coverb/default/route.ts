@@ -7,7 +7,7 @@ export const DEFAULT_ROUTE: Route = {
   component: DefaultComponent,
   data: {
     authorities: [],
-    pageTitle: 'Default'
+    pageTitle: 'default.page.title'
   },
   canActivate: [UserRouteAccessService]
 };

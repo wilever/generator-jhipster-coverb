@@ -7,7 +7,7 @@ export const RESUME_ROUTE: Route = {
   component: ResumeComponent,
   data: {
     authorities: [],
-    pageTitle: 'Resume'
+    pageTitle: 'resume.page.title'
   },
   canActivate: [UserRouteAccessService]
 };

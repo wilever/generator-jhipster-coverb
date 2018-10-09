@@ -7,7 +7,7 @@ export const COMPANY_ROUTE: Route = {
   component: CompanyComponent,
   data: {
     authorities: [],
-    pageTitle: 'Company'
+    pageTitle: 'company.page.title'
   },
   canActivate: [UserRouteAccessService]
 };
