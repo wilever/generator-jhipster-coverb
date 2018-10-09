@@ -88,9 +88,10 @@ fa-icon {
 #logo {
     background: url('/content/images/logo/icons/logo-alternate.png') no-repeat center center;
     display: inline-block;
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     background-size: 105%;
     border-radius: 50%;
     background-color: #fff;
+    margin: 5% auto;
 }
