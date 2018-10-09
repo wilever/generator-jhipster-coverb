@@ -77,6 +77,10 @@ To run coverb demo on a JHipster generated application:
 yo jhipster-coverb:demo
 ```
 
+## Live demo
+
+See our [demo](https://generator-jhispter-coverb-demo.herokuapp.com/) on heroku
+
 ## Contributing
 
 You can add your own cover and help us to grow
