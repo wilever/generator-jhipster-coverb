@@ -31,9 +31,7 @@ function printCoverbLogo(generator) {
     generator.log(`${chalk.blue('##       ##     ##  ##   ##  ##       ##   ##  ')}${chalk.green(' ##     ## ')}`);
     generator.log(`${chalk.blue('##    ## ##     ##   ## ##   ##       ##    ## ')}${chalk.green(' ##     ## ')}`);
     generator.log(`${chalk.blue(' ######   #######     ###    ######## ##     ##')}${chalk.green(' ########  ')}\n`);
-    generator.success('You are working with coverb version: '+chalk.green.bold(packageJson.version)+'\n');
     generator.log(chalk.white.bold('This is a jhipster module see more on https://www.jhipster.tech \n'));
-    
 }
 /**
  * Get cover list as choices
@@ -122,6 +120,7 @@ function copyFiles(files, generator) {
             default:
                 break;
         }
+        //generator.template(file.FROM,file.TO);
       });
 }
 /**
