@@ -87,7 +87,7 @@ You can add your own cover and help us to grow
 
 ## License
 
-Apache-2.0 ©
+Apache-2.0 © -> Contact developer: Wilever Gómez -> wilevergomez@gmail.com
 
 ## Cover type
 ### Resume
