@@ -1,18 +1,13 @@
 {
   "name": "generator-jhipster-coverb",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "A JHipster Module that generates a cover page",
   "keywords": [
-    "scaffold",
-    "generator",
     "yeoman-generator",
     "jhipster",
     "jhipster-module",
     "jhipster-latino",
-    "coverb",
-    "bootstrap",
-    "Twitter Bootstrap",
-    "Angular"
+    "coverb"
   ],
   "homepage": "https://github.com/jhipster-latino/generator-jhispter-coverb",
   "author": {
@@ -33,6 +28,7 @@
     "url": "git+https://github.com/jhipster-latino/generator-jhipster-coverb.git"
   },
   "dependencies": {
+    "ajv": "^6.6.1",
     "chalk": "2.4.1",
     "generator-jhipster": "5.2.0",
     "global": "^4.3.2",

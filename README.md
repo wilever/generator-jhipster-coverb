@@ -98,7 +98,7 @@ Apache-2.0 ©
 
 [npm-image]: https://img.shields.io/npm/v/generator-jhipster-coverb.svg
 [npm-url]: https://npmjs.org/package/generator-jhipster-coverb
-[travis-image]: https://travis-ci.org/jhipster-latino/coverb.svg?branch=master
-[travis-url]: https://travis-ci.org/jhipster-latino/coverb
+[travis-image]: https://travis-ci.org/jhipster-latino/generator-jhipster-coverb.svg?branch=master
+[travis-url]: https://travis-ci.org/jhipster-latino/generator-jhipster-coverb.svg
 [daviddm-image]: https://david-dm.org/jhipster-latino/generator-jhipster-coverb.svg
 [daviddm-url]: https://david-dm.org/jhipster-latino/generator-jhipster-coverb
