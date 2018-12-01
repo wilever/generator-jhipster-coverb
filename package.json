@@ -28,6 +28,7 @@
     "url": "git+https://github.com/jhipster-latino/generator-jhipster-coverb.git"
   },
   "dependencies": {
+    "ajv": "^6.6.1",
     "chalk": "2.4.1",
     "generator-jhipster": "5.2.0",
     "global": "^4.3.2",
