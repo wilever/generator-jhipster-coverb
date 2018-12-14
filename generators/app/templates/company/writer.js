@@ -30,25 +30,12 @@ function run(generator) {
   postWrite(generator);
 }
 /**
- * Pre write: Install dependencies 
+ * Pre write
  * 
  * @param {*} generator 
  */
 function preWrite(generator) {
-  generator.addNpmDependency('@fortawesome/free-brands-svg-icons', '5.2.0');
-  const vendorIcons = 
-  `|// Imports all fontawesome icons
-  |import { fas } from '@fortawesome/free-solid-svg-icons';
-  |import { fab } from '@fortawesome/free-brands-svg-icons';
-  |
-  |// Add all icons to the library so you can use it in your page
-  |library.add(fas, fab);`
-  util.updateFile(
-    constant.PATH.VENDOR,
-    vendorIcons,
-    constant.NEEDLE.ADD_ELEMENT_TO_VENDOR,
-    generator
-  );
+  
 }
 /**
  * Write required files, style and i18n support
@@ -138,6 +125,12 @@ function getFiles(generator) {
           METHOD: 'TEMPLATE',
         },
         {
+          NAME: "ICON_LOADER",
+          FROM: `${COVER_TYPE}/${CLIENT_FRAMEWORK}/icon_loader.ts.ejs`,
+          TO: `${CLIENT_MAIN_SRC_DIR}app/${ROOT_ROUTE}${COVER_NAME}/icon_loader.ts`,
+          METHOD: 'TEMPLATE',
+        },
+        {
           NAME: "COMPONENT",
           FROM: `${COVER_TYPE}/${CLIENT_FRAMEWORK}/component.ts.ejs`,
           TO: `${CLIENT_MAIN_SRC_DIR}app/${ROOT_ROUTE}${COVER_NAME}/component.ts`,
@@ -172,7 +165,79 @@ function getFiles(generator) {
           FROM: `${COVER_TYPE}/content/images/logo/logo-alternate.png`,
           TO: `${CLIENT_MAIN_SRC_DIR}content/images/logo/icons/logo-alternate.png`,
           METHOD: 'CONTENT',
-        }
+        },
+        {
+          NAME: "BULLHORN_ICON_TS",
+          FROM: `${COVER_TYPE}/content/icon/solid/faBullhorn.d.ts`,
+          TO: `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faBullhorn.d.ts`,
+          METHOD: 'CONTENT',
+        },
+        {
+          NAME: "BULLHORN_ICON_JS",
+          FROM: `${COVER_TYPE}/content/icon/solid/faBullhorn.js`,
+          TO: `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faBullhorn.js`,
+          METHOD: 'CONTENT',
+        },
+        {
+          NAME: "CHARTLINE_ICON_TS",
+          FROM: `${COVER_TYPE}/content/icon/solid/faChartLine.d.ts`,
+          TO: `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faChartLine.d.ts`,
+          METHOD: 'CONTENT',
+        },
+        {
+          NAME: "CHARTLINE_ICON_JS",
+          FROM: `${COVER_TYPE}/content/icon/solid/faChartLine.js`,
+          TO: `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faChartLine.js`,
+          METHOD: 'CONTENT',
+        },
+        {
+          NAME: "COGS_ICON_TS",
+          FROM: `${COVER_TYPE}/content/icon/solid/faCogs.d.ts`,
+          TO: `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faCogs.d.ts`,
+          METHOD: 'CONTENT',
+        },
+        {
+          NAME: "COGS_ICON_JS",
+          FROM: `${COVER_TYPE}/content/icon/solid/faCogs.js`,
+          TO: `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faCogs.js`,
+          METHOD: 'CONTENT',
+        },
+        {
+          NAME: "CUBES_ICON_TS",
+          FROM: `${COVER_TYPE}/content/icon/solid/faCubes.d.ts`,
+          TO: `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faCubes.d.ts`,
+          METHOD: 'CONTENT',
+        },
+        {
+          NAME: "CUBES_ICON_JS",
+          FROM: `${COVER_TYPE}/content/icon/solid/faCubes.js`,
+          TO: `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faCubes.js`,
+          METHOD: 'CONTENT',
+        },
+        {
+          NAME: "MAGIC_ICON_TS",
+          FROM: `${COVER_TYPE}/content/icon/solid/faMagic.d.ts`,
+          TO: `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faMagic.d.ts`,
+          METHOD: 'CONTENT',
+        },
+        {
+          NAME: "MAGIC_ICON_JS",
+          FROM: `${COVER_TYPE}/content/icon/solid/faMagic.js`,
+          TO: `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faMagic.js`,
+          METHOD: 'CONTENT',
+        },
+        {
+          NAME: "SERVER_ICON_TS",
+          FROM: `${COVER_TYPE}/content/icon/solid/faServer.d.ts`,
+          TO: `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faServer.d.ts`,
+          METHOD: 'CONTENT',
+        },
+        {
+          NAME: "SERVER_ICON_JS",
+          FROM: `${COVER_TYPE}/content/icon/solid/faServer.js`,
+          TO: `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faServer.js`,
+          METHOD: 'CONTENT',
+        },
       ];
     case constant.CLIENT_FRAMEWORK.REACT:
       return null; // Not supported

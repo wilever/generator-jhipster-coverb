@@ -23,6 +23,7 @@ function files(CLIENT_FRAMEWORK, TEST_CASE, ROOT_ROUTE) {
       return {
         ADDED: [
         `${FILE_PATH}/index.ts`,
+        `${FILE_PATH}/icon_loader.ts`,
         `${FILE_PATH}/component.html`,
         `${FILE_PATH}/module.ts`,
         `${FILE_PATH}/route.ts`,
@@ -32,11 +33,22 @@ function files(CLIENT_FRAMEWORK, TEST_CASE, ROOT_ROUTE) {
       CHANGED: [
         `${CLIENT_MAIN_SRC_DIR}/app/layouts/navbar/navbar.component.html`,
         `${CLIENT_MAIN_SRC_DIR}/app/app.module.ts`,
-        constant.PATH.VENDOR,
         `package.json`,
       ],
       CONTENT: [
         `${CLIENT_MAIN_SRC_DIR}content/images/logo/icons/logo-alternate.png`,
+        `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faBullhorn.d.ts`,
+        `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faBullhorn.js`,
+        `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faChartLine.d.ts`,
+        `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faChartLine.js`,
+        `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faCogs.d.ts`,
+        `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faCogs.js`,
+        `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faCubes.d.ts`,
+        `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faCubes.js`,
+        `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faMagic.d.ts`,
+        `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faMagic.js`,
+        `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faServer.d.ts`,
+        `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faServer.js`,
       ],
       I18N_SKIPPED: [
         `${CLIENT_MAIN_SRC_DIR}i18n`,
