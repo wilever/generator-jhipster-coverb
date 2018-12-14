@@ -23,6 +23,7 @@ function files(CLIENT_FRAMEWORK, TEST_CASE, ROOT_ROUTE) {
       return {
         ADDED: [
         `${FILE_PATH}/index.ts`,
+        `${FILE_PATH}/icon_loader.ts`,
         `${FILE_PATH}/component.html`,
         `${FILE_PATH}/module.ts`,
         `${FILE_PATH}/route.ts`,
@@ -32,13 +33,23 @@ function files(CLIENT_FRAMEWORK, TEST_CASE, ROOT_ROUTE) {
       CHANGED: [
         `${CLIENT_MAIN_SRC_DIR}/app/layouts/navbar/navbar.component.html`,
         `${CLIENT_MAIN_SRC_DIR}/app/app.module.ts`,
-        constant.PATH.VENDOR,
         `package.json`,
       ],
       CONTENT: [
         `${CLIENT_MAIN_SRC_DIR}content/images/resume.png`,
-        `${CLIENT_MAIN_SRC_DIR}content/images/company1.png`,
-        `${CLIENT_MAIN_SRC_DIR}content/images/company2.png`,
+        `${CLIENT_MAIN_SRC_DIR}content/images/company.png`,
+        `${CLIENT_MAIN_SRC_DIR}content/icon/brand/faSass.d.ts`,
+        `${CLIENT_MAIN_SRC_DIR}content/icon/brand/faSass.js`,
+        `${CLIENT_MAIN_SRC_DIR}content/icon/solid/faKey.d.ts`,
+        `${CLIENT_MAIN_SRC_DIR}content/icon/solid/faKey.js`,
+        `${CLIENT_MAIN_SRC_DIR}content/icon/solid/faLanguage.d.ts`,
+        `${CLIENT_MAIN_SRC_DIR}content/icon/solid/faLanguage.js`,
+        `${CLIENT_MAIN_SRC_DIR}content/icon/solid/faLockOpen.d.ts`,
+        `${CLIENT_MAIN_SRC_DIR}content/icon/solid/faLockOpen.js`,
+        `${CLIENT_MAIN_SRC_DIR}content/icon/solid/faMagic.d.ts`,
+        `${CLIENT_MAIN_SRC_DIR}content/icon/solid/faMagic.js`,
+        `${CLIENT_MAIN_SRC_DIR}content/icon/solid/faPalette.d.ts`,
+        `${CLIENT_MAIN_SRC_DIR}content/icon/solid/faPalette.js`,
       ],
       I18N_SKIPPED: [
         `${CLIENT_MAIN_SRC_DIR}i18n`,

@@ -4,16 +4,16 @@ import { JhipsterSharedModule } from 'app/shared';
 import { DEFAULT_ROUTE, DefaultComponent } from './';
 
 @NgModule({
-    imports: [
-      JhipsterSharedModule,
-      RouterModule.forRoot(
-        [ DEFAULT_ROUTE ],
-        { useHash: true })
-    ],
-    declarations: [
-      DefaultComponent,
-    ],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  imports: [
+    JhipsterSharedModule,
+    RouterModule.forRoot(
+      [ DEFAULT_ROUTE ],
+      { useHash: true })
+  ],
+  declarations: [
+    DefaultComponent,
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 
-export class JhipsterDefaultModule {}
+export class JhipsterDefaultModule { }
