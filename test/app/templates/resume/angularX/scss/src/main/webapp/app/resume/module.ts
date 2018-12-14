@@ -4,16 +4,16 @@ import { JhipsterSharedModule } from 'app/shared';
 import { RESUME_ROUTE, ResumeComponent } from './';
 
 @NgModule({
-    imports: [
-      JhipsterSharedModule,
-      RouterModule.forRoot(
-        [ RESUME_ROUTE ],
-        { useHash: true })
-    ],
-    declarations: [
-      ResumeComponent,
-    ],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  imports: [
+    JhipsterSharedModule,
+    RouterModule.forRoot(
+      [ RESUME_ROUTE ],
+      { useHash: true })
+  ],
+  declarations: [
+    ResumeComponent,
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 
-export class JhipsterResumeModule {}
+export class JhipsterResumeModule { }

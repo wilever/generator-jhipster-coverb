@@ -1,13 +1,10 @@
 import { Component } from '@angular/core';
+import './icon_loader';
 
 @Component({
   selector: 'jhi-resume',
   templateUrl: './component.html',
-  styleUrls: [
-    'style.scss'
-  ]
+  styleUrls: ['style.scss']
 })
 
-export class ResumeComponent {
-
-}
+export class ResumeComponent { }

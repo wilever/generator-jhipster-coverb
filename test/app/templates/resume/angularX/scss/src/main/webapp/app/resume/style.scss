@@ -1,158 +1,148 @@
 /* style.scss */
 
-.bg-blue {
-    background: #3e8acc;
-}
-
-.border {
-    border: 1px black dashed;
-}
-
-.profile {
-    background: white;
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    margin: 5% auto;
-}
-
-img {
-    width: 50px;
-}
-
-fa-icon {
-    font-size: 30px;
-    margin: 1%;
-}
-
-content {
-    height: 100%;
-}
-
-footer {
-    margin: 2% auto;
-    background: lightgray;
-    padding: 60px 25px;
-}
-
-@media print {
-    div .card {
-        margin: auto 0;
+#resume {
+    .bg-blue {
+        background: #3e8acc;
     }
-    html {
-        margin: 3% auto;
-        padding: 1%;
+
+    .border {
+        border: 1px black dashed;
     }
-    header,
-    nav,
-    footer,
-    .footer {
-        display: none !important;
+
+    .profile {
+        background: white;
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        margin: 5% auto;
     }
-}
 
-/*Images*/
+    fa-icon {
+        font-size: 30px;
+        margin: 1%;
+    }
 
-#logo {
-    background: url('/content/images/hipster256.png');
-    display: inline-block;
-    width: 250px;
-    height: 250px;
-    background-size: 105%;
-    border-radius: 50%;
-    background-color: #fff;
-    margin: 5% auto;
-}
+    content {
+        height: 100%;
+    }
 
-.logo-img span {
-    display: inline-block;
-    width: 70px;
-    height: 70px;
-    background-size: 65px;
-    background-color: #fff;
-    background-repeat: no-repeat;
-    background-position: center;
-}
+    @media print {
+        div .card {
+            margin: auto 0;
+        }
+        html {
+            margin: 3% auto;
+            padding: 1%;
+        }
+        header,
+        nav,
+        footer,
+        .footer {
+            display: none !important;
+        }
+    }
 
-#html5 {
-    background-image: url('/content/images/logo/svg/html5.svg');
-    background-size: 45px;
-}
+    #logo {
+        background: url('/content/images/hipster256.png');
+        display: inline-block;
+        width: 250px;
+        height: 250px;
+        background-size: 105%;
+        border-radius: 50%;
+        background-color: #fff;
+        margin: 5% auto;
+    }
 
-#css3 {
-    background-image: url('/content/images/logo/svg/css3.svg');
-    background-size: 45px;
-}
+    .logo-img span {
+        display: inline-block;
+        width: 70px;
+        height: 70px;
+        background-size: 65px;
+        background-color: #fff;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
 
-#bootstrap {
-    background-image: url('/content/images/logo/svg/bootstrap.svg');
-}
+    #html5 {
+        background-image: url('/content/images/logo/svg/html5.svg');
+        background-size: 45px;
+    }
 
-#typescript {
-    background-image: url('/content/images/logo/svg/typescript.svg');
-}
+    #css3 {
+        background-image: url('/content/images/logo/svg/css3.svg');
+        background-size: 45px;
+    }
 
-#angular {
-    background-image: url('/content/images/logo/svg/angular.svg');
-}
+    #bootstrap {
+        background-image: url('/content/images/logo/svg/bootstrap.svg');
+    }
 
-#react {
-    background-image: url('/content/images/logo/svg/react.svg');
-}
+    #typescript {
+        background-image: url('/content/images/logo/svg/typescript.svg');
+    }
 
-#webpack {
-    background-image: url('/content/images/logo/svg/webpack.svg');
-}
+    #angular {
+        background-image: url('/content/images/logo/svg/angular.svg');
+    }
 
-#sass {
-    background-image: url('/content/images/logo/svg/sass.svg');
-}
+    #react {
+        background-image: url('/content/images/logo/svg/react.svg');
+    }
 
-#spring {
-    background-image: url('/content/images/logo/icons/spring.png');
-}
+    #webpack {
+        background-image: url('/content/images/logo/svg/webpack.svg');
+    }
 
-#netflix {
-    background-image: url('/content/images/logo/icons/netflix.png');
-}
+    #sass {
+        background-image: url('/content/images/logo/svg/sass.svg');
+    }
 
-#gradle {
-    background-image: url('/content/images/logo/icons/gradle.png');
-}
+    #spring {
+        background-image: url('/content/images/logo/icons/spring.png');
+    }
 
-#maven {
-    background-image: url('/content/images/logo/icons/maven.png');
-}
+    #netflix {
+        background-image: url('/content/images/logo/icons/netflix.png');
+    }
 
-#hibernate {
-    background-image: url('/content/images/logo/icons/hibernate.gif');
-}
+    #gradle {
+        background-image: url('/content/images/logo/icons/gradle.png');
+    }
 
-#swagger {
-    background-image: url('/content/images/logo/icons/swagger.png');
-}
+    #maven {
+        background-image: url('/content/images/logo/icons/maven.png');
+    }
 
-#gatling {
-    background-image: url('/content/images/logo/icons/gatling.png');
-}
+    #hibernate {
+        background-image: url('/content/images/logo/icons/hibernate.gif');
+    }
 
-#cucumber {
-    background-image: url('/content/images/logo/icons/cucumber.png');
-}
+    #swagger {
+        background-image: url('/content/images/logo/icons/swagger.png');
+    }
 
-#jenkins {
-    background-image: url('/content/images/logo/svg/jenkins.svg');
-    background-size: 40px;
-}
+    #gatling {
+        background-image: url('/content/images/logo/icons/gatling.png');
+    }
 
-#travis {
-    background-image: url('/content/images/logo/svg/travis.svg');
-}
+    #cucumber {
+        background-image: url('/content/images/logo/icons/cucumber.png');
+    }
 
-#gitlab {
-    background-image: url('/content/images/logo/svg/gitlab.svg');
-}
+    #jenkins {
+        background-image: url('/content/images/logo/svg/jenkins.svg');
+        background-size: 40px;
+    }
 
-#circleci {
-    background-image: url('/content/images/logo/svg/circleci.svg');
+    #travis {
+        background-image: url('/content/images/logo/svg/travis.svg');
+    }
+
+    #gitlab {
+        background-image: url('/content/images/logo/svg/gitlab.svg');
+    }
+
+    #circleci {
+        background-image: url('/content/images/logo/svg/circleci.svg');
+    }
 }
