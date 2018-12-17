@@ -41,6 +41,8 @@ function files(CLIENT_FRAMEWORK, TEST_CASE, ROOT_ROUTE) {
         `${CLIENT_MAIN_SRC_DIR}content/images/company.png`,
         `${CLIENT_MAIN_SRC_DIR}app/shared/icon/brand/faSass.d.ts`,
         `${CLIENT_MAIN_SRC_DIR}app/shared/icon/brand/faSass.js`,
+        `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faCube.d.ts`,
+        `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faCube.js`,
         `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faKey.d.ts`,
         `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faKey.js`,
         `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faLanguage.d.ts`,

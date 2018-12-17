@@ -38,6 +38,8 @@ function files(CLIENT_FRAMEWORK, TEST_CASE, ROOT_ROUTE) {
       ],
       CONTENT: [
         `${CLIENT_MAIN_SRC_DIR}content/images/logo/icons/logo-alternate.png`,
+        `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faCube.d.ts`,
+        `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faCube.js`,
         `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faBullhorn.d.ts`,
         `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faBullhorn.js`,
         `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faChartLine.d.ts`,

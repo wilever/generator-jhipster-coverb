@@ -69,6 +69,8 @@ function files(CLIENT_FRAMEWORK, TEST_CASE, ROOT_ROUTE) {
           `${CLIENT_MAIN_SRC_DIR}app/shared/icon/brand/faSass.js`,
           `${CLIENT_MAIN_SRC_DIR}app/shared/icon/brand/faTwitter.d.ts`,
           `${CLIENT_MAIN_SRC_DIR}app/shared/icon/brand/faTwitter.js`,
+          `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faCube.d.ts`,
+          `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faCube.js`,
           `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faBaseballBall.d.ts`,
           `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faBaseballBall.js`,
           `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faBicycle.d.ts`,

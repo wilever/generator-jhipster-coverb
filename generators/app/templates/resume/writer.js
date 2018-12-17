@@ -352,6 +352,18 @@ function getFiles(generator) {
           METHOD: 'CONTENT',
         },
         {
+          NAME: "CUBE_ICON_TS",
+          FROM: `${COVER_TYPE}/content/icon/solid/faCube.d.ts`,
+          TO: `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faCube.d.ts`,
+          METHOD: 'CONTENT',
+        },
+        {
+          NAME: "CUBE_ICON_JS",
+          FROM: `${COVER_TYPE}/content/icon/solid/faCube.js`,
+          TO: `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faCube.js`,
+          METHOD: 'CONTENT',
+        },
+        {
           NAME: "BASEBALL_BALL_ICON_TS",
           FROM: `${COVER_TYPE}/content/icon/solid/faBaseballBall.d.ts`,
           TO: `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faBaseballBall.d.ts`,
