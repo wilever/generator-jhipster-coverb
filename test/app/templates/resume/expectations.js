@@ -1,3 +1,4 @@
+const util = require('../../../../generators/app/util');
 const constant = require('../../../../generators/app/constant');
 const COVER_TYPE = constant.COVER_TYPE.ANGULAR.RESUME;
 const writer = require(`../../../../generators/app/templates/${COVER_TYPE}/writer`);
@@ -27,7 +28,7 @@ function files(CLIENT_FRAMEWORK, TEST_CASE, ROOT_ROUTE) {
           `${FILE_PATH}/component.html`,
           `${FILE_PATH}/module.ts`,
           `${FILE_PATH}/route.ts`,
-          `${FILE_PATH}/style.${TEST_CASE == 'css' ? 'css' : 'scss'}`,
+          `${FILE_PATH}/style.${util.getStyleSuffixForTestCase(TEST_CASE)}`,
           `${TEST_PATH}/component.spec.ts`
         ],
         CHANGED: [

@@ -1,3 +1,4 @@
+const util = require('../../../../generators/app/util');
 const constant = require('../../../../generators/app/constant');
 const COVER_TYPE = constant.COVER_TYPE.ANGULAR.COMPANY;
 const writer = require(`../../../../generators/app/templates/${COVER_TYPE}/writer`);
@@ -27,7 +28,7 @@ function files(CLIENT_FRAMEWORK, TEST_CASE, ROOT_ROUTE) {
         `${FILE_PATH}/component.html`,
         `${FILE_PATH}/module.ts`,
         `${FILE_PATH}/route.ts`,
-        `${FILE_PATH}/style.${TEST_CASE == 'css' ? 'css':'scss'}`,
+        `${FILE_PATH}/style.${util.getStyleSuffixForTestCase(TEST_CASE)}`,
         `${TEST_PATH}/component.spec.ts`,
       ],
       CHANGED: [
@@ -67,4 +68,23 @@ function files(CLIENT_FRAMEWORK, TEST_CASE, ROOT_ROUTE) {
     default:
       return null; // Not supported
   }
+/**
+ * Get style suffix for TEST_CASE
+ * 
+ * @param {} TEST_CASE 
+ *
+  function getStyleSuffixForTestCase(TEST_CASE) {
+    switch (TEST_CASE) {
+      case constant.TEST_CASE.CSS:
+        return 'css';
+      case constant.TEST_CASE.SCSS:
+        return 'scss';
+      case constant.TEST_CASE.CSS_MULTI_LANGUAGE:
+        return 'css';
+      case constant.TEST_CASE.SCSS_MULTI_LANGUAGE:
+        return 'scss';
+      default:
+        return 'style for test case not defined';
+    }
+  }*/
 }
