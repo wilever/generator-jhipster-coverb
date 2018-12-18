@@ -160,6 +160,12 @@ function getFiles(generator) {
           METHOD: 'TEMPLATE',
         },
         {
+          NAME: "PERFIL_IMAGE",
+          FROM: `${COVER_TYPE}/content/images/logo/icons/logo-alternate.png`,
+          TO: `${CLIENT_MAIN_SRC_DIR}content/images/logo/icons/logo-alternate.png`,
+          METHOD: 'CONTENT',
+        },
+        {
           NAME: "ICON",
           FROM: `${COVER_TYPE}/content/images/logo/icons/cucumber.png`,
           TO: `${CLIENT_MAIN_SRC_DIR}content/images/logo/icons/cucumber.png`,
