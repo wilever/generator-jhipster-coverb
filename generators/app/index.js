@@ -77,19 +77,8 @@ module.exports = class extends BaseGenerator {
 
   get end() {
     return {
-      installDependencies() {
-        // install dependencies
-        if (!this.options["skip-install"]) {
-          if (this.jhipsterAppConfig.clientPackageManager === "yarn") {
-            this.warning(`Installing dependencies using yarn`);
-            this.yarnInstall();
-          } else if (this.jhipsterAppConfig.clientPackageManager === "npm") {
-            this.warning(`Installing dependencies using npm`);
-            this.npmInstall();
-          }
-        } else {
-            this.warning(`Dependencies instalation skipped`);
-        }
+      exit() {
+        this.warning(`Exit from jhipster module`);
       }
     };
   }

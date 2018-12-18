@@ -1,14 +1,14 @@
 /* style.css */
 
-.bg-blue {
+#resume .bg-blue {
     background: #3e8acc;
 }
 
-.border {
+#resume .border {
     border: 1px black dashed;
 }
 
-.profile {
+#resume .profile {
     background: white;
     width: 250px;
     height: 250px;
@@ -16,23 +16,13 @@
     margin: 5% auto;
 }
 
-img {
-    width: 50px;
-}
-
-fa-icon {
+#resume fa-icon {
     font-size: 30px;
     margin: 1%;
 }
 
-content {
+#resume content {
     height: 100%;
-}
-
-footer {
-    margin: 2% auto;
-    background: lightgray;
-    padding: 60px 25px;
 }
 
 @media print {
@@ -51,10 +41,8 @@ footer {
     }
 }
 
-/*Images*/
-
-#logo {
-    background: url('/content/images/hipster256.png');
+#resume #logo {
+    background: url('/content/images/logo/icons/logo-alternate.png');
     display: inline-block;
     width: 250px;
     height: 250px;
@@ -64,7 +52,7 @@ footer {
     margin: 5% auto;
 }
 
-.logo-img span {
+#resume .logo-img span {
     display: inline-block;
     width: 70px;
     height: 70px;
@@ -74,12 +62,12 @@ footer {
     background-position: center;
 }
 
-#html5 {
+#resume #html5 {
     background-image: url('/content/images/logo/svg/html5.svg');
     background-size: 45px;
 }
 
-#css3 {
+#resume #css3 {
     background-image: url('/content/images/logo/svg/css3.svg');
     background-size: 45px;
 }
@@ -140,7 +128,7 @@ footer {
     background-image: url('/content/images/logo/icons/cucumber.png');
 }
 
-#jenkins {
+#resume #jenkins {
     background-image: url('/content/images/logo/svg/jenkins.svg');
     background-size: 40px;
 }

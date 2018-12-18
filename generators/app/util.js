@@ -17,7 +17,9 @@ module.exports = {
     getCoverList,
     getCoverListChoices,
     writeDemoFiles,
-    printCoverbLogo
+    printCoverbLogo,
+    getStyleSuffixForTestCase,
+    getMultiLanguageForTestCase
 };
 /**
  * Print coverb logo
@@ -337,4 +339,42 @@ function addAngularModule(ANGULAR_X_APP_NAME, COVER_NAME, ROOT_ROUTE, generator)
         constant.NEEDLE.ADD_ANGULAR_MODULE,
         generator
     );
+}
+/**
+ * Get style suffix for TEST_CASE
+ * 
+ * @param {} TEST_CASE 
+ */
+function getStyleSuffixForTestCase(TEST_CASE) {
+    switch (TEST_CASE) {
+      case constant.TEST_CASE.CSS:
+        return 'css';
+      case constant.TEST_CASE.SCSS:
+        return 'scss';
+      case constant.TEST_CASE.CSS_MULTI_LANGUAGE:
+        return 'css';
+      case constant.TEST_CASE.SCSS_MULTI_LANGUAGE:
+        return 'scss';
+      default:
+        return 'style for test case not defined';
+    }
+}
+/**
+ * Get multilanguage flag for TEST_CASE
+ * 
+ * @param {} TEST_CASE 
+ */
+function getMultiLanguageForTestCase(TEST_CASE) {
+    switch (TEST_CASE) {
+      case constant.TEST_CASE.CSS:
+        return false;
+      case constant.TEST_CASE.SCSS:
+        return false;
+      case constant.TEST_CASE.CSS_MULTI_LANGUAGE:
+        return true;
+      case constant.TEST_CASE.SCSS_MULTI_LANGUAGE:
+        return true;
+      default:
+        return 'multilanguage for test case not defined';
+    }
 }

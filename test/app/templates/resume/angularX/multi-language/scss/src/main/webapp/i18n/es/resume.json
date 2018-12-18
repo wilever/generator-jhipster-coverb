@@ -1,0 +1,35 @@
+{
+  "resume": {
+    "page": {
+      "title": "[ES] Resume"
+    },
+    "professional": {
+      "title": "[ES] Web developer"
+    },
+    "about-me": {
+      "title": "[ES] About me",
+      "content": "[ES] I'm a fullstack web generator. I can generate, develop and deploy Spring Boot + Angular/React Web applications and Spring microservices.<br><br>My goal is to generate for you a complete and modern web app or microservice architecture, unifying a high-performance and robust Java stack on server side with Spring Boot and a modern, mobile-first front-end with Angular, React and Bootstrap."
+    },
+    "rrss": {
+      "title": "[ES] RRSS"
+    },
+    "contact": {
+      "title": "[ES] Contact"
+    },
+    "formation": {
+      "title": "[ES] Formation"
+    },
+    "experience": {
+      "title": "[ES] Experience"
+    },
+    "habilities": {
+      "title": "[ES] Habilities"
+    },
+    "languages": {
+      "title": "[ES] Language"
+    },
+    "hobbie": {
+      "title": "[ES] Hobbies"
+    }
+  }
+}
