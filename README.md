@@ -87,14 +87,13 @@ You can add your own cover and help us to grow
 
 ## License
 
-Apache-2.0 ©
+Apache-2.0 © -> Contact developer: Wilever Gómez -> wilevergomez@gmail.com
 
 ## Cover type
 ### Resume
 ![resume](/generators/app/templates/default/content/images/resume.png)
 ### Company
-![company1](/generators/app/templates/default/content/images/company1.png)
-![company2](/generators/app/templates/default/content/images/company2.png)
+![company](/generators/app/templates/default/content/images/company.png)
 
 [npm-image]: https://img.shields.io/npm/v/generator-jhipster-coverb.svg
 [npm-url]: https://npmjs.org/package/generator-jhipster-coverb

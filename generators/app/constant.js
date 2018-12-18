@@ -7,7 +7,8 @@ module.exports = {
     TEST_CASE: {
         CSS: 'css',
         SCSS: 'scss',
-        MULTI_LANGUAGE: 'multi-language'
+        CSS_MULTI_LANGUAGE: 'multi-language/css',
+        SCSS_MULTI_LANGUAGE: 'multi-language/scss'
     },
     ROOT_ROUTE: '',
     DEMO_ROOT_ROUTE: 'coverb/',

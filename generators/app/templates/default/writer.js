@@ -30,25 +30,12 @@ function run(generator) {
   postWrite(generator);
 }
 /**
- * Pre write: Install dependencies 
+ * Pre write
  * 
  * @param {*} generator 
  */
 function preWrite(generator) {
-  generator.addNpmDependency('@fortawesome/free-brands-svg-icons', '5.2.0');
-  const vendorIcons = 
-  `|// Imports all fontawesome icons
-  |import { fas } from '@fortawesome/free-solid-svg-icons';
-  |import { fab } from '@fortawesome/free-brands-svg-icons';
-  |
-  |// Add all icons to the library so you can use it in your page
-  |library.add(fas, fab);`
-  util.updateFile(
-    constant.PATH.VENDOR,
-    vendorIcons,
-    constant.NEEDLE.ADD_ELEMENT_TO_VENDOR,
-    generator
-  );
+  
 }
 /**
  * Write required files, style and i18n support
@@ -137,6 +124,12 @@ function getFiles(generator) {
           METHOD: 'TEMPLATE',
         },
         {
+          NAME: "ICON_LOADER",
+          FROM: `${COVER_TYPE}/${CLIENT_FRAMEWORK}/icon_loader.ts.ejs`,
+          TO: `${CLIENT_MAIN_SRC_DIR}app/${ROOT_ROUTE}${COVER_NAME}/icon_loader.ts`,
+          METHOD: 'TEMPLATE',
+        },
+        {
           NAME: "COMPONENT",
           FROM: `${COVER_TYPE}/${CLIENT_FRAMEWORK}/component.ts.ejs`,
           TO: `${CLIENT_MAIN_SRC_DIR}app/${ROOT_ROUTE}${COVER_NAME}/component.ts`,
@@ -173,17 +166,95 @@ function getFiles(generator) {
           METHOD: 'CONTENT',
         },
         {
-          NAME: "COMPANY1",
-          FROM: `${COVER_TYPE}/content/images/company1.png`,
-          TO: `${CLIENT_MAIN_SRC_DIR}content/images/company1.png`,
+          NAME: "COMPANY",
+          FROM: `${COVER_TYPE}/content/images/company.png`,
+          TO: `${CLIENT_MAIN_SRC_DIR}content/images/company.png`,
           METHOD: 'CONTENT',
         },
         {
-          NAME: "COMPANY2",
-          FROM: `${COVER_TYPE}/content/images/company2.png`,
-          TO: `${CLIENT_MAIN_SRC_DIR}content/images/company2.png`,
+          NAME: "SASS_ICON_TS",
+          FROM: `${COVER_TYPE}/content/icon/brand/faSass.d.ts`,
+          TO: `${CLIENT_MAIN_SRC_DIR}app/shared/icon/brand/faSass.d.ts`,
           METHOD: 'CONTENT',
-        }
+        },
+        {
+          NAME: "SASS_ICON_JS",
+          FROM: `${COVER_TYPE}/content/icon/brand/faSass.js`,
+          TO: `${CLIENT_MAIN_SRC_DIR}app/shared/icon/brand/faSass.js`,
+          METHOD: 'CONTENT',
+        },
+        {
+          NAME: "CUBE_ICON_TS",
+          FROM: `${COVER_TYPE}/content/icon/solid/faCube.d.ts`,
+          TO: `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faCube.d.ts`,
+          METHOD: 'CONTENT',
+        },
+        {
+          NAME: "CUBE_ICON_JS",
+          FROM: `${COVER_TYPE}/content/icon/solid/faCube.js`,
+          TO: `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faCube.js`,
+          METHOD: 'CONTENT',
+        },
+        {
+          NAME: "KEY_ICON_TS",
+          FROM: `${COVER_TYPE}/content/icon/solid/faKey.d.ts`,
+          TO: `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faKey.d.ts`,
+          METHOD: 'CONTENT',
+        },
+        {
+          NAME: "KEY_ICON_JS",
+          FROM: `${COVER_TYPE}/content/icon/solid/faKey.js`,
+          TO: `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faKey.js`,
+          METHOD: 'CONTENT',
+        },
+        {
+          NAME: "LANGUAGE_ICON_TS",
+          FROM: `${COVER_TYPE}/content/icon/solid/faLanguage.d.ts`,
+          TO: `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faLanguage.d.ts`,
+          METHOD: 'CONTENT',
+        },
+        {
+          NAME: "LANGUAGE_ICON_JS",
+          FROM: `${COVER_TYPE}/content/icon/solid/faLanguage.js`,
+          TO: `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faLanguage.js`,
+          METHOD: 'CONTENT',
+        },
+        {
+          NAME: "LOCK_OPEN_ICON_TS",
+          FROM: `${COVER_TYPE}/content/icon/solid/faLockOpen.d.ts`,
+          TO: `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faLockOpen.d.ts`,
+          METHOD: 'CONTENT',
+        },
+        {
+          NAME: "LOCK_OPEN_ICON_JS",
+          FROM: `${COVER_TYPE}/content/icon/solid/faLockOpen.js`,
+          TO: `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faLockOpen.js`,
+          METHOD: 'CONTENT',
+        },
+        {
+          NAME: "MAGIC_ICON_TS",
+          FROM: `${COVER_TYPE}/content/icon/solid/faMagic.d.ts`,
+          TO: `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faMagic.d.ts`,
+          METHOD: 'CONTENT',
+        },
+        {
+          NAME: "MAGIC_ICON_JS",
+          FROM: `${COVER_TYPE}/content/icon/solid/faMagic.js`,
+          TO: `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faMagic.js`,
+          METHOD: 'CONTENT',
+        },
+        {
+          NAME: "PALETTE_ICON_TS",
+          FROM: `${COVER_TYPE}/content/icon/solid/faPalette.d.ts`,
+          TO: `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faPalette.d.ts`,
+          METHOD: 'CONTENT',
+        },
+        {
+          NAME: "PALETTE_ICON_JS",
+          FROM: `${COVER_TYPE}/content/icon/solid/faPalette.js`,
+          TO: `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faPalette.js`,
+          METHOD: 'CONTENT',
+        },
       ];
     case constant.CLIENT_FRAMEWORK.REACT:
       return null; // Not supported

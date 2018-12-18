@@ -30,9 +30,9 @@
   "dependencies": {
     "ajv": "^6.6.1",
     "chalk": "2.4.1",
-    "generator-jhipster": "5.2.0",
+    "generator-jhipster": "5.7.1",
     "global": "^4.3.2",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.0",
     "lodash": "4.17.10",
     "mkdirp": "0.5.1",
     "semver": "5.5.0",
