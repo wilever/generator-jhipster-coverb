@@ -17,5 +17,5 @@ library.add(
     faLanguage,
     faLockOpen,
     faMagic,
-    faPalette,
+    faPalette
 );
