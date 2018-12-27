@@ -66,7 +66,44 @@ function files(CLIENT_FRAMEWORK, TEST_CASE, ROOT_ROUTE) {
       ],
     };
     case constant.CLIENT_FRAMEWORK.REACT:
-      return null; // Not supported
+      return {
+        ADDED: [
+        `${FILE_PATH}/icon-loader.tsx`,
+        `${FILE_PATH}/component.tsx`,
+        `${FILE_PATH}/navbar.item.tsx`,
+        `${FILE_PATH}/style.${util.getStyleSuffixForTestCase(TEST_CASE)}`,
+      ],
+      CHANGED: [
+      ],
+      CONTENT: [
+        `${CLIENT_MAIN_SRC_DIR}content/images/logo/icons/logo-alternate.png`,
+        `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faCube.d.ts`,
+        `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faCube.js`,
+        `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faBullhorn.d.ts`,
+        `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faBullhorn.js`,
+        `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faChartLine.d.ts`,
+        `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faChartLine.js`,
+        `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faCogs.d.ts`,
+        `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faCogs.js`,
+        `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faCubes.d.ts`,
+        `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faCubes.js`,
+        `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faMagic.d.ts`,
+        `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faMagic.js`,
+        `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faServer.d.ts`,
+        `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faServer.js`,
+      ],
+      I18N_SKIPPED: [
+        `${CLIENT_MAIN_SRC_DIR}i18n`,
+      ],
+      I18N: [
+        `${CLIENT_MAIN_SRC_DIR}i18n/en/${COVER_TYPE}.json`,
+        `${CLIENT_MAIN_SRC_DIR}i18n/es/${COVER_TYPE}.json`,
+        `${CLIENT_MAIN_SRC_DIR}i18n/fr/${COVER_TYPE}.json`,
+        `${CLIENT_MAIN_SRC_DIR}i18n/en/global.json`,
+        `${CLIENT_MAIN_SRC_DIR}i18n/es/global.json`,
+        `${CLIENT_MAIN_SRC_DIR}i18n/fr/global.json`,
+      ],
+    };
     default:
       return null; // Not supported
   }

@@ -97,13 +97,22 @@ function writeFiles(generator) {
  * @param {*} generator 
  */
 function postWrite(generator) {
-  util.addNavBarItem(
-    constant.NAV_BAR_TYPE.ITEM,
-    constant.NEEDLE.ADD_ELEMENT_TO_MENU,
-    generator.COVER_NAME,
-    generator.ROOT_ROUTE,
-    generator
-  );
+
+  switch (generator.CLIENT_FRAMEWORK) {
+    case constant.CLIENT_FRAMEWORK.ANGULAR:
+      util.addNavBarItem(
+        constant.NAV_BAR_TYPE.ITEM,
+        constant.NEEDLE.ADD_ELEMENT_TO_MENU,
+        generator.COVER_NAME,
+        generator.ROOT_ROUTE,
+        generator
+      );
+      break;
+    case constant.CLIENT_FRAMEWORK.REACT:
+      break;
+  }
+
+  
   // Autogenerate i18n menu
   if (generator.ENABLE_TRANSLATION === true) {
     util.autoGenerateI18nMenu(
@@ -267,8 +276,8 @@ function getFiles(generator) {
       },*/
       {
         NAME: "ICON_LOADER",
-        FROM: `${COVER_TYPE}/${CLIENT_FRAMEWORK}/icon_loader.ts.ejs`,
-        TO: `${CLIENT_MAIN_SRC_DIR}app/${ROOT_ROUTE}${COVER_NAME}/icon_loader.ts`,
+        FROM: `${COVER_TYPE}/${CLIENT_FRAMEWORK}/icon-loader.tsx.ejs`,
+        TO: `${CLIENT_MAIN_SRC_DIR}app/${ROOT_ROUTE}${COVER_NAME}/icon-loader.tsx`,
         METHOD: 'TEMPLATE',
       },
       {
@@ -285,8 +294,8 @@ function getFiles(generator) {
       },*/
       {
         NAME: "ITEM",
-        FROM: `${COVER_TYPE}/${CLIENT_FRAMEWORK}/company.item.tsx.ejs`,
-        TO: `${CLIENT_MAIN_SRC_DIR}app/${ROOT_ROUTE}${COVER_NAME}/company.item.tsx`,
+        FROM: `${COVER_TYPE}/${CLIENT_FRAMEWORK}/navbar.item.tsx.ejs`,
+        TO: `${CLIENT_MAIN_SRC_DIR}app/${ROOT_ROUTE}${COVER_NAME}/navbar.item.tsx`,
         METHOD: 'TEMPLATE',
       },
       /*{
