@@ -80,6 +80,22 @@ function writeFiles(generator) {
         );
       break;
     case constant.CLIENT_FRAMEWORK.REACT:
+        util.replaceContent({
+          path: constant.PATH.ROUTE_REACT,
+          file: `route.tsx`,
+          pattern: `<ErrorBoundaryRoute path="/" component={Home} />`,
+          content: `      <ErrorBoundaryRoute path="/${_.kebabCase(generator.COVER_NAME)}" component={${_.startCase(generator.COVER_NAME)}} />
+          <ErrorBoundaryRoute path="/" component={Home} />`
+        },generator)
+        util.replaceContent([
+          path = constant.PATH.ROUTE_REACT,
+          file = "route.tsx",
+          pattern = `import { AUTHORITIES } from 'app/config/constants';
+          `,
+          content = `import { AUTHORITIES } from 'app/config/constants';
+
+          import ${_.startCase(generator.COVER_NAME)} from './modules/${_.kebabCase(generator.COVER_NAME)}/${_.kebabCase(generator.COVER_NAME)}';`
+        ],generator)
       break;
   }
   // Autogenerate i18n files

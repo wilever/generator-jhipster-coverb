@@ -19,7 +19,8 @@ module.exports = {
     writeDemoFiles,
     printCoverbLogo,
     getStyleSuffixForTestCase,
-    getMultiLanguageForTestCase
+    getMultiLanguageForTestCase,
+    replaceContent
 };
 /**
  * Print coverb logo
@@ -377,4 +378,8 @@ function getMultiLanguageForTestCase(TEST_CASE) {
       default:
         return 'multilanguage for test case not defined';
     }
+}
+
+function replaceContent(args, generator){
+    jhipsterUtils.renderContent(args,generator);
 }
