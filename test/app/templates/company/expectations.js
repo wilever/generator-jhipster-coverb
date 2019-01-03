@@ -74,7 +74,7 @@ function files(CLIENT_FRAMEWORK, TEST_CASE, ROOT_ROUTE) {
         `${FILE_PATH}/style.${util.getStyleSuffixForTestCase(TEST_CASE)}`,
       ],
       CHANGED: [
-        `${CLIENT_MAIN_SRC_DIR}/app/route.tsx`,
+        `${CLIENT_MAIN_SRC_DIR}/app/routes.tsx`,
       ],
       CONTENT: [
         `${CLIENT_MAIN_SRC_DIR}content/images/logo/icons/logo-alternate.png`,

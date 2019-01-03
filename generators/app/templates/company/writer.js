@@ -80,22 +80,48 @@ function writeFiles(generator) {
         );
       break;
     case constant.CLIENT_FRAMEWORK.REACT:
+    //savingData(generator);
+    //fetchingData(generator);
+    asyncFunction(generator);
+    /*
+    let file = constant.PATH.ROUTE_REACT+`routes.tsx`;
+    let pattern = `<ErrorBoundaryRoute path="/" component={Home} />`;
+    let content = `<ErrorBoundaryRoute path="/${_.kebabCase(generator.COVER_NAME)}" component={${_.startCase(generator.COVER_NAME)}} />
+      <ErrorBoundaryRoute path="/" component={Home} />`
+    util.replaceContent({
+      file: file,
+      pattern,
+      content, 
+    },generator);
+    
+    pattern = `import { AUTHORITIES } from 'app/config/constants';
+    `;
+    content = `import { AUTHORITIES } from 'app/config/constants';
+
+    import ${_.startCase(generator.COVER_NAME)} from './modules/${_.kebabCase(generator.COVER_NAME)}/${_.kebabCase(generator.COVER_NAME)}';`;
+    util.replaceContent({
+      file: file,
+      pattern,
+      content
+    },generator);
+    /*
         util.replaceContent({
           path: constant.PATH.ROUTE_REACT,
-          file: `route.tsx`,
+          file: `routes.tsx`,
           pattern: `<ErrorBoundaryRoute path="/" component={Home} />`,
           content: `      <ErrorBoundaryRoute path="/${_.kebabCase(generator.COVER_NAME)}" component={${_.startCase(generator.COVER_NAME)}} />
           <ErrorBoundaryRoute path="/" component={Home} />`
         },generator)
-        util.replaceContent([
-          path = constant.PATH.ROUTE_REACT,
-          file = "route.tsx",
-          pattern = `import { AUTHORITIES } from 'app/config/constants';
+        util.replaceContent({
+          path: constant.PATH.ROUTE_REACT,
+          file: "routes.tsx",
+          pattern: `import { AUTHORITIES } from 'app/config/constants';
           `,
-          content = `import { AUTHORITIES } from 'app/config/constants';
+          content: `import { AUTHORITIES } from 'app/config/constants';
 
           import ${_.startCase(generator.COVER_NAME)} from './modules/${_.kebabCase(generator.COVER_NAME)}/${_.kebabCase(generator.COVER_NAME)}';`
-        ],generator)
+        },generator)
+        */
       break;
   }
   // Autogenerate i18n files
@@ -420,4 +446,35 @@ function getFiles(generator) {
     default:
       return null; // Not supported
   }
+}
+
+async function asyncFunction(generator){
+  await fetchingData(generator) // Wait for this
+  await savingData(generator) // Then wait for that
+};
+
+
+function fetchingData(generator) {
+  const file = constant.PATH.ROUTE_REACT+`routes.tsx`;
+  const pattern = `<ErrorBoundaryRoute path="/" component={Home} />`;
+  const content = `<ErrorBoundaryRoute path="/${_.kebabCase(generator.COVER_NAME)}" component={${_.startCase(generator.COVER_NAME)}} />
+      <ErrorBoundaryRoute path="/" component={Home} />`
+  util.replaceContent({
+    file: file,
+    pattern,
+    content, 
+  },generator);
+}
+
+function savingData(generator) {
+  const file = constant.PATH.ROUTE_REACT+`routes.tsx`;
+  const pattern = `import { AUTHORITIES } from 'app/config/constants';`;
+  const content = `import { AUTHORITIES } from 'app/config/constants';
+
+import ${_.startCase(generator.COVER_NAME)} from './modules/${_.kebabCase(generator.COVER_NAME)}/${_.kebabCase(generator.COVER_NAME)}';`;
+  util.replaceContent({
+    file: file,
+    pattern,
+    content
+  },generator);
 }

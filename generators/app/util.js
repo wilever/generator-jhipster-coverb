@@ -381,5 +381,5 @@ function getMultiLanguageForTestCase(TEST_CASE) {
 }
 
 function replaceContent(args, generator){
-    jhipsterUtils.renderContent(args,generator);
+    jhipsterUtils.replaceContent(args,generator);
 }
