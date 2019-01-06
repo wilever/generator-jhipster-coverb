@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 <%-ENABLE_TRANSLATION ? `import { Translate } from 'react-jhipster';\n`:``_%>
 import { Row, Col } from 'reactstrap';
 
-export class Company extends Component {
+export class <%=_.upperFirst(_.camelCase(COVER_NAME))%> extends Component {
   render() {
     return (
       <div>
@@ -163,4 +163,4 @@ export class Company extends Component {
   }
 }
 
-export default Company;
+export default <%=_.upperFirst(_.camelCase(COVER_NAME))%>;
