@@ -1,5 +1,5 @@
-import 'app/cover/company/company.css';
-import 'app/cover/company/icon-loader';
+import './style.scss';
+import './icon-loader';
 
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -14,8 +14,7 @@ export class Company extends Component {
           <div className="jumbotron text-center">
             <span id="logo-company" />
             <h1>
-              {/*<Translate contentKey="company.name">Jhipster Latino</Translate>*/}
-              Jhipster Latino2
+              <Translate contentKey="company.name">Jhipster Latino</Translate>
             </h1>
             <p>
               <Translate contentKey="company.description">Development tools and courses for build better jhipster applications</Translate>

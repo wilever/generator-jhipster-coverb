@@ -80,48 +80,8 @@ function writeFiles(generator) {
         );
       break;
     case constant.CLIENT_FRAMEWORK.REACT:
-    //savingData(generator);
-    //fetchingData(generator);
-    asyncFunction(generator);
-    /*
-    let file = constant.PATH.ROUTE_REACT+`routes.tsx`;
-    let pattern = `<ErrorBoundaryRoute path="/" component={Home} />`;
-    let content = `<ErrorBoundaryRoute path="/${_.kebabCase(generator.COVER_NAME)}" component={${_.startCase(generator.COVER_NAME)}} />
-      <ErrorBoundaryRoute path="/" component={Home} />`
-    util.replaceContent({
-      file: file,
-      pattern,
-      content, 
-    },generator);
-    
-    pattern = `import { AUTHORITIES } from 'app/config/constants';
-    `;
-    content = `import { AUTHORITIES } from 'app/config/constants';
-
-    import ${_.startCase(generator.COVER_NAME)} from './modules/${_.kebabCase(generator.COVER_NAME)}/${_.kebabCase(generator.COVER_NAME)}';`;
-    util.replaceContent({
-      file: file,
-      pattern,
-      content
-    },generator);
-    /*
-        util.replaceContent({
-          path: constant.PATH.ROUTE_REACT,
-          file: `routes.tsx`,
-          pattern: `<ErrorBoundaryRoute path="/" component={Home} />`,
-          content: `      <ErrorBoundaryRoute path="/${_.kebabCase(generator.COVER_NAME)}" component={${_.startCase(generator.COVER_NAME)}} />
-          <ErrorBoundaryRoute path="/" component={Home} />`
-        },generator)
-        util.replaceContent({
-          path: constant.PATH.ROUTE_REACT,
-          file: "routes.tsx",
-          pattern: `import { AUTHORITIES } from 'app/config/constants';
-          `,
-          content: `import { AUTHORITIES } from 'app/config/constants';
-
-          import ${_.startCase(generator.COVER_NAME)} from './modules/${_.kebabCase(generator.COVER_NAME)}/${_.kebabCase(generator.COVER_NAME)}';`
-        },generator)
-        */
+      updateRoutes(generator);
+      updateHeader(generator);
       break;
   }
   // Autogenerate i18n files
@@ -355,7 +315,7 @@ function getFiles(generator) {
       {
         NAME: "LOGO_ALTERNATE",
         FROM: `${COVER_TYPE}/content/images/logo/logo-alternate.png`,
-        TO: `${CLIENT_MAIN_SRC_DIR}content/images/logo/icons/logo-alternate.png`,
+        TO: `${CLIENT_MAIN_SRC_DIR}static/images/logo/icons/logo-alternate.png`,
         METHOD: 'CONTENT',
       },
       {
@@ -448,13 +408,13 @@ function getFiles(generator) {
   }
 }
 
-async function asyncFunction(generator){
-  await fetchingData(generator) // Wait for this
-  await savingData(generator) // Then wait for that
+async function updateRoutes(generator){
+  await addRouteImport(generator) // Wait for this
+  await addRoute(generator) // Then wait for that
 };
 
 
-function fetchingData(generator) {
+function addRoute(generator) {
   const file = constant.PATH.ROUTE_REACT+`routes.tsx`;
   const pattern = `<ErrorBoundaryRoute path="/" component={Home} />`;
   const content = `<ErrorBoundaryRoute path="/${_.kebabCase(generator.COVER_NAME)}" component={${_.startCase(generator.COVER_NAME)}} />
@@ -466,12 +426,42 @@ function fetchingData(generator) {
   },generator);
 }
 
-function savingData(generator) {
+function addRouteImport(generator) {
   const file = constant.PATH.ROUTE_REACT+`routes.tsx`;
   const pattern = `import { AUTHORITIES } from 'app/config/constants';`;
   const content = `import { AUTHORITIES } from 'app/config/constants';
 
-import ${_.startCase(generator.COVER_NAME)} from './modules/${_.kebabCase(generator.COVER_NAME)}/${_.kebabCase(generator.COVER_NAME)}';`;
+import ${_.startCase(generator.COVER_NAME)} from 'app/${generator.ROOT_ROUTE}${_.kebabCase(generator.COVER_NAME)}/component';`;
+  util.replaceContent({
+    file: file,
+    pattern,
+    content
+  },generator);
+}
+
+async function updateHeader(generator){
+  await addHeaderImport(generator) // Wait for this
+  await addHeader(generator) // Then wait for that
+};
+
+function addHeader(generator) {
+  const file = constant.PATH.HEADER_REACT+`header.tsx`;
+  const pattern = `<Home />`;
+  const content = `<Home />
+              <${_.startCase(generator.COVER_NAME)} />`
+  util.replaceContent({
+    file: file,
+    pattern,
+    content, 
+  },generator);
+}
+
+function addHeaderImport(generator) {
+  const file = constant.PATH.HEADER_REACT+`header.tsx`;
+  const pattern = `import React from 'react';`;
+  const content = `import React from 'react';
+
+import ${_.startCase(generator.COVER_NAME)} from 'app/${generator.ROOT_ROUTE}${_.kebabCase(generator.COVER_NAME)}/navbar.item';`;
   util.replaceContent({
     file: file,
     pattern,

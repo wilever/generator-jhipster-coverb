@@ -1,9 +1,8 @@
-import 'app/cover/company/company.css';
-import 'app/cover/company/icon-loader';
+import './style.css';
+import './icon-loader';
 
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Translate } from 'react-jhipster';
 import { Row, Col } from 'reactstrap';
 
 export class Company extends Component {
@@ -14,19 +13,18 @@ export class Company extends Component {
           <div className="jumbotron text-center">
             <span id="logo-company" />
             <h1>
-              {/*<Translate contentKey="company.name">Jhipster Latino</Translate>*/}
-              Jhipster Latino2
+              Jhipster Latino
             </h1>
             <p>
-              <Translate contentKey="company.description">Development tools and courses for build better jhipster applications</Translate>
+              Development tools and courses for build better jhipster applications
             </p>
           </div>
           <div className="container-fluid text-center">
             <h2>
-              <Translate contentKey="company.service.title">Services</Translate>
+              Services
             </h2>
             <p>
-              <Translate contentKey="company.service.description">What we offer?</Translate>
+              What we offer?
             </p>
             <br />
             <Row>
@@ -49,10 +47,10 @@ export class Company extends Component {
           </div>
           <div className="container-fluid text-center bg-gray">
             <h2>
-              <Translate contentKey="company.portafolio.title">Portafolio</Translate>
+              Portafolio
             </h2>
             <p>
-              <Translate contentKey="company.portafolio.description">What did we already created?</Translate>
+              What did we already created?
             </p>
             <br />
             <Row className="text-center">
@@ -89,10 +87,10 @@ export class Company extends Component {
           <div className="container-fluid">
             <div className="text-center">
               <h2>
-                <Translate contentKey="company.pricing.title">Pricing</Translate>
+                Pricing
               </h2>
               <p>
-                <Translate contentKey="company.pricing.description">Choose a payment plan that works for you</Translate>
+                Choose a payment plan that works for you
               </p>
               <br />
             </div>

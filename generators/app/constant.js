@@ -45,7 +45,9 @@ module.exports = {
             COMPANY: 'company',
         },
         REACT: {
-            // NOT SUPPORTED
+            DEFAULT: 'default',
+            RESUME: 'resume',
+            COMPANY: 'company',
         }
     },
     MESSAGE:{

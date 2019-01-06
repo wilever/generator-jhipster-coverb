@@ -34,7 +34,7 @@ function printCoverbLogo(generator) {
     generator.log(`${chalk.blue('##       ##     ##  ##   ##  ##       ##   ##  ')}${chalk.green(' ##     ## ')}`);
     generator.log(`${chalk.blue('##    ## ##     ##   ## ##   ##       ##    ## ')}${chalk.green(' ##     ## ')}`);
     generator.log(`${chalk.blue(' ######   #######     ###    ######## ##     ##')}${chalk.green(' ########  ')}\n`);
-    generator.success('You are working with coverb version: '+chalk.green.bold(packageJson.version)+'\n');
+    generator.success('You are working with coverb version2: '+chalk.green.bold(packageJson.version)+'\n');
     generator.log(chalk.white.bold('This is a jhipster module see more on https://www.jhipster.tech \n'));
     
 }
@@ -60,7 +60,7 @@ function getCoverList(CLIENT_FRAMEWORK) {
         case constant.CLIENT_FRAMEWORK.ANGULAR:
             return constant.COVER_TYPE.ANGULAR;
         case constant.CLIENT_FRAMEWORK.REACT:
-            return null; // NO SUPPORTED
+            return constant.COVER_TYPE.REACT;
         default:
         // OTHER CLIENT FRAMEWORK NOT SUPPORTED
             return null;

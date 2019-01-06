@@ -2,12 +2,17 @@ import React from 'react';
 import { NavItem, NavLink } from 'reactstrap';
 import { NavLink as Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+<%-ENABLE_TRANSLATION ? `import { Translate } from 'react-jhipster';\n`:``_%>
 
-export const Company = props => (
+const Company = props => (
   <NavItem>
-    <NavLink tag={Link} to="/company" className="d-flex align-items-center">
+    <NavLink tag={Link} to="/<%=ROOT_ROUTE%><%=_.kebabCase(COVER_NAME)%>" className="d-flex align-items-center">
       <FontAwesomeIcon icon="cube" />
-      <span>Company</span>
+      <span>
+        <%-ENABLE_TRANSLATION ? `<Translate contentKey="global.menu.${_.kebabCase(COVER_NAME)}">${_.upperFirst(_.camelCase(COVER_NAME))}</Translate>`:`${_.upperFirst(_.camelCase(COVER_NAME))}`%>
+      </span>
     </NavLink>
   </NavItem>
 );
+
+export default <%=_.upperFirst(_.camelCase(COVER_NAME))%>;

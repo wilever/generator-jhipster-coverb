@@ -1,6 +1,6 @@
 import { AUTHORITIES } from 'app/config/constants';
 
-import Company from './modules/company/company';
+import Company from 'app/company/component';
 
 const Routes = () => (
   <div className="view-routes">
