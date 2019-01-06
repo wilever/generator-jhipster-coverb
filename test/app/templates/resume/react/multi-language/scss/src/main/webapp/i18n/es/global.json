@@ -1,0 +1,8 @@
+{
+  "global": {
+    "menu": {
+      "resume": "[ES] Resume",
+      "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)"
+    }
+  }
+}
