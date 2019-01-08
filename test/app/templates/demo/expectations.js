@@ -30,7 +30,15 @@ function files(CLIENT_FRAMEWORK, ROOT_ROUTE) {
         ]
       };
     case constant.CLIENT_FRAMEWORK.REACT:
-      return null; // Not supported
+    return {
+      ADDED: [
+        `${CLIENT_MAIN_SRC_DIR}app/${ROOT_ROUTE}/icon-loader.tsx`,
+        `${CLIENT_MAIN_SRC_DIR}app/${ROOT_ROUTE}/index.tsx`,
+        `${CLIENT_MAIN_SRC_DIR}app/${ROOT_ROUTE}/navbar.menu.tsx`,
+      ],
+      CHANGED: [
+      ]
+    };
     default:
       return null; // Not supported
   }

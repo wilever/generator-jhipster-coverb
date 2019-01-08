@@ -20,14 +20,25 @@ module.exports = {
  * @param {*} generator 
  */
 function run(generator) {
-  // Add menu nav bar
-  util.addNavBarItem (
-    constant.NAV_BAR_TYPE.MENU,
-    constant.NEEDLE.ADD_ELEMENT_TO_MENU,
-    _.kebabCase(generator.ROOT_ROUTE),
-    null,
-    generator
-  );
+  switch (generator.CLIENT_FRAMEWORK) {
+    case constant.CLIENT_FRAMEWORK.ANGULAR:
+    // Add menu nav bar
+    util.addNavBarItem (
+      constant.NAV_BAR_TYPE.MENU,
+      constant.NEEDLE.ADD_ELEMENT_TO_MENU,
+      _.kebabCase(generator.ROOT_ROUTE),
+      null,
+      generator
+    );
+    break;
+  case constant.CLIENT_FRAMEWORK.REACT:
+    // Write required files
+    util.copyFiles(
+      getFiles(generator)
+      ,generator
+    );
+    break;
+}
   // Add i18n support to menu nav bar
   generator.getAllInstalledLanguages().forEach((language) => {
     // Add menu to global.json
@@ -72,11 +83,58 @@ function writeFiles(generator) {
  * @param {*} generator 
  */
 function postWrite(generator) {
-  util.addNavBarItem(
-    constant.NAV_BAR_TYPE.MENU_ITEM,
-    `jhipster-needle-add-item-to-${_.kebabCase(generator.ROOT_ROUTE)}-menu`,
-    generator.COVER_TYPE,
-    generator.ROOT_ROUTE,
-    generator
-  ); 
+  switch (generator.CLIENT_FRAMEWORK) {
+    case constant.CLIENT_FRAMEWORK.ANGULAR:
+      util.addNavBarItem(
+        constant.NAV_BAR_TYPE.MENU_ITEM,
+        `jhipster-needle-add-item-to-${_.kebabCase(generator.ROOT_ROUTE)}-menu`,
+        generator.COVER_TYPE,
+        generator.ROOT_ROUTE,
+        generator
+      );
+    break;
+    case constant.CLIENT_FRAMEWORK.REACT:
+    // delete navbar.item
+    break;
+    default:
+      return null; // Not supported
+}
+}
+
+/**
+ * Get files to copy
+ *
+ * @param {string} ROOT_ROUTE kebabCase and lowerCase
+ */
+function getFiles(generator) {
+  const ROOT_ROUTE = generator.ROOT_ROUTE;
+  const CLIENT_FRAMEWORK = generator.CLIENT_FRAMEWORK;
+  const COVER_NAME = _.kebabCase(generator.COVER_NAME);
+  switch (CLIENT_FRAMEWORK) {
+    case constant.CLIENT_FRAMEWORK.ANGULAR:
+      return null;
+    case constant.CLIENT_FRAMEWORK.REACT:
+    return [
+        {
+          NAME: "ICON_LOADER",
+          FROM: `demo/${CLIENT_FRAMEWORK}/icon-loader.tsx.ejs`,
+          TO: `${CLIENT_MAIN_SRC_DIR}app/${ROOT_ROUTE}${COVER_NAME}/icon-loader.tsx`,
+          METHOD: 'TEMPLATE',
+        },
+        {
+          NAME: "INDEX",
+          FROM: `demo/${CLIENT_FRAMEWORK}/index.tsx.ejs`,
+          TO: `${CLIENT_MAIN_SRC_DIR}app/${ROOT_ROUTE}${COVER_NAME}/index.tsx`,
+          METHOD: 'TEMPLATE',
+        },
+        {
+          NAME: "MENU",
+          FROM: `demo/${CLIENT_FRAMEWORK}/navbar.menu.tsx.ejs`,
+          TO: `${CLIENT_MAIN_SRC_DIR}app/${ROOT_ROUTE}${COVER_NAME}/navbar.menu.tsx`,
+          METHOD: 'TEMPLATE',
+        },
+    ];
+    default:
+      return null; // Not supported
+  }
 }
