@@ -40,6 +40,7 @@ function run(generator) {
     updateRoutes(generator);
     //addRouteImport(generator);
     //addRoute(generator)
+    updateHeader(generator);
     break;
 }
   // Add i18n support to menu nav bar
@@ -201,6 +202,36 @@ function addRouteImport(generator) {
   const content = `import { AUTHORITIES } from 'app/config/constants';
 
 import ${_.startCase(generator.ROOT_ROUTE)} from 'app/${_.kebabCase(generator.ROOT_ROUTE)}';`;
+  util.replaceContent({
+    file: file,
+    pattern,
+    content
+  },generator);
+}
+
+async function updateHeader(generator){
+  addHeaderImport(generator) // Wait for this
+  await addHeader(generator) // Then wait for that
+};
+
+function addHeader(generator) {
+  const file = constant.PATH.HEADER_REACT+`header.tsx`;
+  const pattern = `<Home />`;
+  const content = `<Home />
+              <${_.startCase(generator.ROOT_ROUTE)} />`
+  util.replaceContent({
+    file: file,
+    pattern,
+    content, 
+  },generator);
+}
+
+function addHeaderImport(generator) {
+  const file = constant.PATH.HEADER_REACT+`header.tsx`;
+  const pattern = `import React from 'react';`;
+  const content = `import React from 'react';
+
+import ${_.startCase(generator.ROOT_ROUTE)} from 'app/${generator.ROOT_ROUTE}/navbar.menu';`;
   util.replaceContent({
     file: file,
     pattern,
