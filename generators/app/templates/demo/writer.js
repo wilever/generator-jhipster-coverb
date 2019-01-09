@@ -100,9 +100,7 @@ function postWrite(generator) {
     case constant.CLIENT_FRAMEWORK.REACT:
     // delete navbar.item
     updateMenu(generator);
-    //generator.removeFile(`${CLIENT_MAIN_SRC_DIR}app/${generator.ROOT_ROUTE}${generator.COVER_NAME}/navbar.item.tsx`);
-    //addItemImport(generator);
-    //addItem(generator);
+    clean(generator);
     break;
     default:
       return null; // Not supported
@@ -238,4 +236,8 @@ import ${_.startCase(generator.ROOT_ROUTE)} from 'app/${generator.ROOT_ROUTE}/na
     pattern,
     content
   },generator);
+}
+
+async function clean(generator){
+  util.removeFile(`${CLIENT_MAIN_SRC_DIR}app/${generator.ROOT_ROUTE}${generator.COVER_NAME}/navbar.item.tsx`, generator);
 }

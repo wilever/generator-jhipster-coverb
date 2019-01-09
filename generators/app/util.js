@@ -20,7 +20,8 @@ module.exports = {
     printCoverbLogo,
     getStyleSuffixForTestCase,
     getMultiLanguageForTestCase,
-    replaceContent
+    replaceContent,
+    removeFile
 };
 /**
  * Print coverb logo
@@ -382,4 +383,8 @@ function getMultiLanguageForTestCase(TEST_CASE) {
 
 function replaceContent(args, generator){
     jhipsterUtils.replaceContent(args,generator);
+}
+
+function removeFile(file, generator){
+    generator.removeFile(file);
 }
