@@ -95,6 +95,9 @@ function postWrite(generator) {
     break;
     case constant.CLIENT_FRAMEWORK.REACT:
     // delete navbar.item
+    updateMenu(generator);
+    //addItemImport(generator);
+    //addItem(generator);
     break;
     default:
       return null; // Not supported
@@ -137,4 +140,36 @@ function getFiles(generator) {
     default:
       return null; // Not supported
   }
+}
+
+async function updateMenu(generator){
+  addItem(generator) // Then wait for that
+  await addItemImport(generator) // Wait for this
+};
+
+function addItem(generator) {
+  const file = `${CLIENT_MAIN_SRC_DIR}app/${generator.ROOT_ROUTE}/navbar.menu.tsx`;
+  const pattern = `{/* jhipster-needle-add-item-to-menu - JHipster will add entities to the menu here */}`;
+  const content = `<DropdownItem tag={Link} to="${generator.ROOT_ROUTE}${_.kebabCase(generator.COVER_NAME)}">
+      <FontAwesomeIcon icon="cube" />
+      &nbsp;${_.startCase(generator.COVER_NAME)}
+    </DropdownItem>
+    {/* jhipster-needle-add-item-to-menu - JHipster will add entities to the menu here */}`
+  util.replaceContent({
+    file: file,
+    pattern,
+    content, 
+  },generator);
+}
+
+function addItemImport(generator) {
+  const file = `${CLIENT_MAIN_SRC_DIR}app/${generator.ROOT_ROUTE}/navbar.menu.tsx`;
+  const pattern = `// jhipster-needle-add-import-to-menu - JHipster will add entities to the menu here`;
+  const content = `import ${_.startCase(generator.COVER_NAME)} from 'app/${generator.ROOT_ROUTE}${_.kebabCase(generator.COVER_NAME)}/${_.kebabCase(generator.COVER_NAME)}';
+// jhipster-needle-add-import-to-menu - JHipster will add entities to the menu here`;
+  util.replaceContent({
+    file: file,
+    pattern,
+    content
+  },generator);
 }
