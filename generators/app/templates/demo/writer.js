@@ -100,6 +100,7 @@ function postWrite(generator) {
     case constant.CLIENT_FRAMEWORK.REACT:
     // delete navbar.item
     updateMenu(generator);
+    //generator.removeFile(`${CLIENT_MAIN_SRC_DIR}app/${generator.ROOT_ROUTE}${generator.COVER_NAME}/navbar.item.tsx`);
     //addItemImport(generator);
     //addItem(generator);
     break;
