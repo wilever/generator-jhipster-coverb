@@ -1,6 +1,6 @@
 import { AUTHORITIES } from 'app/config/constants';
 
-import Company from 'app/company/component';
+import Coverb from 'app/coverb';
 
 const Routes = () => (
   <div className="view-routes">
@@ -14,7 +14,7 @@ const Routes = () => (
       <PrivateRoute path="/admin" component={Admin} hasAnyAuthorities={[AUTHORITIES.ADMIN]} />
       <PrivateRoute path="/account" component={Account} hasAnyAuthorities={[AUTHORITIES.ADMIN, AUTHORITIES.USER]} />
       <PrivateRoute path="/entity" component={Entities} hasAnyAuthorities={[AUTHORITIES.USER]} />
-      <ErrorBoundaryRoute path="/company" component={Company} />
+      <ErrorBoundaryRoute path="/coverb" component={Coverb} />
       <ErrorBoundaryRoute path="/" component={Home} />
     </Switch>
   </div>

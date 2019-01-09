@@ -37,6 +37,7 @@ function files(CLIENT_FRAMEWORK, ROOT_ROUTE) {
         `${CLIENT_MAIN_SRC_DIR}app/${ROOT_ROUTE}/navbar.menu.tsx`,
       ],
       CHANGED: [
+        `${CLIENT_MAIN_SRC_DIR}app/routes.tsx`,
       ]
     };
     default:

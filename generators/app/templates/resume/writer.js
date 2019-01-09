@@ -79,8 +79,6 @@ function writeFiles(generator) {
       );
       break;
     case constant.CLIENT_FRAMEWORK.REACT:
-      updateRoutes(generator);
-      updateHeader(generator);
       break;
   }
   // Autogenerate i18n files
@@ -109,6 +107,8 @@ function postWrite(generator) {
       );
       break;
     case constant.CLIENT_FRAMEWORK.REACT:
+      updateRoutes(generator);
+      updateHeader(generator);
       break;
   }
   // Autogenerate i18n menu

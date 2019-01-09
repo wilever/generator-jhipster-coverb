@@ -37,6 +37,9 @@ function run(generator) {
       getFiles(generator)
       ,generator
     );
+    updateRoutes(generator);
+    //addRouteImport(generator);
+    //addRoute(generator)
     break;
 }
   // Add i18n support to menu nav bar
@@ -150,7 +153,7 @@ async function updateMenu(generator){
 function addItem(generator) {
   const file = `${CLIENT_MAIN_SRC_DIR}app/${generator.ROOT_ROUTE}/navbar.menu.tsx`;
   const pattern = `{/* jhipster-needle-add-item-to-menu - JHipster will add entities to the menu here */}`;
-  const content = `<DropdownItem tag={Link} to="${generator.ROOT_ROUTE}${_.kebabCase(generator.COVER_NAME)}">
+  const content = `<DropdownItem tag={Link} to="/${generator.ROOT_ROUTE}${_.kebabCase(generator.COVER_NAME)}">
       <FontAwesomeIcon icon="cube" />
       &nbsp;${_.startCase(generator.COVER_NAME)}
     </DropdownItem>
@@ -167,6 +170,37 @@ function addItemImport(generator) {
   const pattern = `// jhipster-needle-add-import-to-menu - JHipster will add entities to the menu here`;
   const content = `import ${_.startCase(generator.COVER_NAME)} from 'app/${generator.ROOT_ROUTE}${_.kebabCase(generator.COVER_NAME)}/${_.kebabCase(generator.COVER_NAME)}';
 // jhipster-needle-add-import-to-menu - JHipster will add entities to the menu here`;
+  util.replaceContent({
+    file: file,
+    pattern,
+    content
+  },generator);
+}
+
+async function updateRoutes(generator){
+  addRouteImport(generator) // Wait for this
+  await addRoute(generator) // Then wait for that
+};
+
+
+function addRoute(generator) {
+  const file = constant.PATH.ROUTE_REACT+`routes.tsx`;
+  const pattern = `<ErrorBoundaryRoute path="/" component={Home} />`;
+  const content = `<ErrorBoundaryRoute path="/${_.kebabCase(generator.ROOT_ROUTE)}" component={${_.startCase(generator.ROOT_ROUTE)}} />
+      <ErrorBoundaryRoute path="/" component={Home} />`
+  util.replaceContent({
+    file: file,
+    pattern,
+    content, 
+  },generator);
+}
+
+function addRouteImport(generator) {
+  const file = constant.PATH.ROUTE_REACT+`routes.tsx`;
+  const pattern = `import { AUTHORITIES } from 'app/config/constants';`;
+  const content = `import { AUTHORITIES } from 'app/config/constants';
+
+import ${_.startCase(generator.ROOT_ROUTE)} from 'app/${_.kebabCase(generator.ROOT_ROUTE)}';`;
   util.replaceContent({
     file: file,
     pattern,

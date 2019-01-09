@@ -12,15 +12,15 @@ import Company from 'app/coverb/company/company';
 const CoverMenu = props => (
   // tslint:disable-next-line:jsx-self-close
   <NavDropdown icon="cubes" name="demo" id="demo-menu">
-    <DropdownItem tag={Link} to="coverb/default">
+    <DropdownItem tag={Link} to="/coverb/default">
       <FontAwesomeIcon icon="cube" />
       &nbsp;Default
     </DropdownItem>
-    <DropdownItem tag={Link} to="coverb/resume">
+    <DropdownItem tag={Link} to="/coverb/resume">
       <FontAwesomeIcon icon="cube" />
       &nbsp;Resume
     </DropdownItem>
-    <DropdownItem tag={Link} to="coverb/company">
+    <DropdownItem tag={Link} to="/coverb/company">
       <FontAwesomeIcon icon="cube" />
       &nbsp;Company
     </DropdownItem>
