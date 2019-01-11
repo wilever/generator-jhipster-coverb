@@ -4,6 +4,7 @@ const jhipsterUtils = require('generator-jhipster/generators/utils');
 const packageJson = require('../../package.json');
 const semver = require('semver');
 const chalk = require('chalk');
+const shelljs = require('shelljs');
 
 module.exports = {
     writeCoverFiles,

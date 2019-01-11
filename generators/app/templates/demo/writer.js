@@ -19,7 +19,7 @@ module.exports = {
  * Start writer
  * @param {*} generator 
  */
-function run(generator) {
+ function run(generator) {
   switch (generator.CLIENT_FRAMEWORK) {
     case constant.CLIENT_FRAMEWORK.ANGULAR:
     // Add menu nav bar
@@ -54,6 +54,34 @@ function run(generator) {
     );
   });
   // For each cover generate a page
+  switch (generator.CLIENT_FRAMEWORK){
+    case constant.CLIENT_FRAMEWORK.ANGULAR:
+    _.forEach(util.getCoverList(generator.CLIENT_FRAMEWORK), function(COVER) {  
+      generator.COVER_TYPE = COVER;
+      generator.COVER_NAME = generator.COVER_TYPE;
+      // Prepare to write
+      preWrite(generator);
+      // Write files
+      writeFiles(generator);
+      // Add another data
+      postWrite(generator);
+    });
+    break;
+    case constant.CLIENT_FRAMEWORK.REACT:
+    asyncForEach(util.getCoverList(generator.CLIENT_FRAMEWORK), async (COVER) => {
+      generator.COVER_TYPE = COVER;
+      generator.COVER_NAME = generator.COVER_TYPE;
+      // Prepare to write
+      preWrite(generator);
+      // Write files
+      writeFiles(generator);
+      // Add another data
+      postWrite(generator);
+    });
+    break;
+  }
+  
+/*
   _.forEach(util.getCoverList(generator.CLIENT_FRAMEWORK), function(COVER) {  
     generator.COVER_TYPE = COVER;
     generator.COVER_NAME = generator.COVER_TYPE;
@@ -63,7 +91,7 @@ function run(generator) {
     writeFiles(generator);
     // Add another data
     postWrite(generator);
-  });
+  });*/
 }
 /**
  * Pre write: Add menu nav bar and call Cover preWrite()
@@ -145,7 +173,7 @@ function getFiles(generator) {
   }
 }
 
-async function updateMenu(generator){
+ async function updateMenu(generator){
   addItem(generator) // Then wait for that
   await addItemImport(generator) // Wait for this
 };
@@ -240,4 +268,10 @@ import ${_.startCase(generator.ROOT_ROUTE)} from 'app/${generator.ROOT_ROUTE}/na
 
 async function clean(generator){
   util.removeFile(`${CLIENT_MAIN_SRC_DIR}app/${generator.ROOT_ROUTE}${generator.COVER_NAME}/navbar.item.tsx`, generator);
+}
+
+async function asyncForEach(array, callback) {
+  for (let index = 0; index < array.length; index++) {
+    await callback(array[index], index, array);
+  }
 }
