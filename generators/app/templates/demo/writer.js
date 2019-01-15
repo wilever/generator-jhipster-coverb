@@ -236,6 +236,37 @@ import ${_.startCase(generator.ROOT_ROUTE)} from 'app/${_.kebabCase(generator.RO
   },generator);
 }
 
+async function updateRoutes2(generator){
+  addRouteImport2(generator) // Wait for this
+  await addRoute2(generator) // Then wait for that
+};
+
+
+function addRoute2(generator) {// TODO
+  const file = `${CLIENT_MAIN_SRC_DIR}app/${ROOT_ROUTE}/index.tsx`;
+  const pattern = `{/* jhipster-needle-add-route-path - JHipster will routes here */}`;
+  const content = `<ErrorBoundaryRoute path="/${_.kebabCase(generator.ROOT_ROUTE)}" component={${_.startCase(generator.ROOT_ROUTE)}} />
+  {/* jhipster-needle-add-route-path - JHipster will routes here */}`
+  util.replaceContent({
+    file: file,
+    pattern,
+    content, 
+  },generator);
+}
+
+function addRouteImport2(generator) {//TODO
+  const file = `${CLIENT_MAIN_SRC_DIR}app/${ROOT_ROUTE}/index.tsx`;
+  const pattern = `import { AUTHORITIES } from 'app/config/constants';`;
+  const content = `import { AUTHORITIES } from 'app/config/constants';
+
+import ${_.startCase(generator.ROOT_ROUTE)} from 'app/${_.kebabCase(generator.ROOT_ROUTE)}';`;
+  util.replaceContent({
+    file: file,
+    pattern,
+    content
+  },generator);
+}
+
 async function updateHeader(generator){
   addHeaderImport(generator) // Wait for this
   await addHeader(generator) // Then wait for that
