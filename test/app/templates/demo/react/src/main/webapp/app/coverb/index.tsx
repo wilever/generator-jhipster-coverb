@@ -9,7 +9,6 @@ import ErrorBoundaryRoute from 'app/shared/error/error-boundary-route';
 import Default from 'app/coverb/default/component';
 import Resume from 'app/coverb/resume/component';
 import Company from 'app/coverb/company/component';
-
 /* jhipster-needle-add-route-import - JHipster will add routes here */
 
 const Routes = ({ match }) => (
