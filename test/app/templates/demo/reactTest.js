@@ -56,8 +56,4 @@ describe(`DEMO - CLIENT_FRAMEWORK: ${CLIENT_FRAMEWORK}\n`, () => {
       assert.textEqual(actualContent, expectedContent);
     });
   });
-
-  it('Files deleted successfully', () => {
-    assert.noFile(EXPECTED_FILES.DELETED);
-  });
 });
