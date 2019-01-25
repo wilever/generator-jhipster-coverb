@@ -1,7 +1,7 @@
 /* style.scss */
 
 #resume {
-
+  font-family: Arial, Helvetica, sans-serif;
   .bg-blue {
     background: #3e8acc;
   }
@@ -45,10 +45,6 @@
     background-color: #fff;
     background-repeat: no-repeat;
     background-position: center;
-  }
-
-  h2, h5, h3 {
-    font-weight: lighter;
   }
 
   @media print {

@@ -58,27 +58,21 @@ export class Company extends Component {
               <Col sm="4">
                 <div className="thumbnail">
                   <FontAwesomeIcon icon="cubes" className="icon" />
-                  <p>
-                    <strong>coverb</strong>
-                  </p>
+                  <h4>coverb</h4>
                   <p>Customice you client</p>
                 </div>
               </Col>
               <Col sm="4">
                 <div className="thumbnail">
                   <FontAwesomeIcon icon="cogs" className="icon" />
-                  <p>
-                    <strong>moduleb</strong>
-                  </p>
+                  <h4>moduleb</h4>
                   <p>Build your own module</p>
                 </div>
               </Col>
               <Col sm="4">
                 <div className="thumbnail">
                   <FontAwesomeIcon icon="server" className="icon" />
-                  <p>
-                    <strong>engineb</strong>
-                  </p>
+                  <h4>engineb</h4>
                   <p>Data managment</p>
                 </div>
               </Col>
