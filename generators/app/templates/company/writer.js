@@ -111,6 +111,7 @@ function postWrite(generator) {
     case constant.CLIENT_FRAMEWORK.REACT:
       updateRoutes(generator);
       updateHeader(generator);
+      excludeIcons(generator);
       break;
   }
 
@@ -467,4 +468,19 @@ import ${_.startCase(generator.COVER_NAME)} from 'app/${generator.ROOT_ROUTE}${_
     pattern,
     content
   },generator);
+}
+
+function excludeIcons(generator) {
+  const file = `tsconfig.json`;
+  const pattern = `"node_modules"`;
+  const content = `"node_modules",
+    "src/main/webapp/app/shared/icon"`;
+  util.replaceContent(
+    {
+      file: file,
+      pattern,
+      content
+    },
+    generator
+  );
 }

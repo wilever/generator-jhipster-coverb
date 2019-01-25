@@ -41,6 +41,7 @@ function files(CLIENT_FRAMEWORK, ROOT_ROUTE) {
         `${CLIENT_MAIN_SRC_DIR}i18n/en/global.json`,
         `${CLIENT_MAIN_SRC_DIR}i18n/es/global.json`,
         `${CLIENT_MAIN_SRC_DIR}i18n/fr/global.json`,
+        `tsconfig.json`
       ],
     };
     default:
