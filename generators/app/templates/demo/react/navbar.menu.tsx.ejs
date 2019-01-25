@@ -8,7 +8,7 @@ import { NavDropdown } from 'app/shared/layout/header/header-components';
 
 const <%-_.upperFirst(_.camelCase(ROOT_ROUTE))%> = props => (
   // tslint:disable-next-line:jsx-self-close
-  <NavDropdown icon="cubes" name="demo" id="demo-menu">
+  <NavDropdown icon="cubes" name="<%=_.kebabCase(ROOT_ROUTE)%>" id="<%=_.kebabCase(ROOT_ROUTE)%>-menu">
     {/* jhipster-needle-add-item-to-menu - JHipster will add entities to the menu here */}
   </NavDropdown>
 );

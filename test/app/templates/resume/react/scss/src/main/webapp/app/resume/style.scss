@@ -47,6 +47,10 @@
     background-position: center;
   }
 
+  h2, h5, h3 {
+    font-weight: lighter;
+  }
+
   @media print {
     div .card {
       margin: auto 0;

@@ -23,12 +23,22 @@ export class Resume extends Component {
                 </h3>
                 <hr />
                 {/* About me*/}
-                <h3>
+                <h4>
                   About me
-                </h3>
+                </h4>
                 <hr />
                 <p className="text-justify">
-                  about me content
+                  I'm a fullstack web generator.
+                  I can generate, develop and
+                  deploy Spring Boot + Angular/React
+                  Web applications and Spring microservices.
+                  <br />
+                  My goal is to generate for you a complete
+                  and modern web app or microservice
+                  architecture, unifying a high-performance
+                  and robust Java stack on server side with
+                  Spring Boot and a modern, mobile-first
+                  front-end with Angular, React and Bootstrap.
                 </p>
                 <hr />
                 {/* My profile on web*/}
