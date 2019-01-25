@@ -17,5 +17,5 @@ library.add(
     faMagic,
     faCubes,
     faCogs,
-    faServer,
+    faServer
 );

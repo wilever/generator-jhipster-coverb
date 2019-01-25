@@ -69,13 +69,19 @@ function writeFiles(generator) {
     );
   }
   
-  // Add angular module
-  util.addAngularModule(
-      generator.ANGULAR_X_APP_NAME,
-      generator.COVER_NAME,
-      generator.ROOT_ROUTE,
-      generator
-  );
+  switch (generator.CLIENT_FRAMEWORK) {
+    case constant.CLIENT_FRAMEWORK.ANGULAR:
+      // Add angular module
+      util.addAngularModule(
+        generator.ANGULAR_X_APP_NAME,
+        generator.COVER_NAME,
+        generator.ROOT_ROUTE,
+        generator
+        );
+      break;
+    case constant.CLIENT_FRAMEWORK.REACT:
+      break;
+  }
   // Autogenerate i18n files
   if (generator.ENABLE_TRANSLATION === true) {
     util.autoGenerateI18nFiles(
@@ -91,13 +97,24 @@ function writeFiles(generator) {
  * @param {*} generator 
  */
 function postWrite(generator) {
-  util.addNavBarItem(
-    constant.NAV_BAR_TYPE.ITEM,
-    constant.NEEDLE.ADD_ELEMENT_TO_MENU,
-    generator.COVER_NAME,
-    generator.ROOT_ROUTE,
-    generator
-  );
+
+  switch (generator.CLIENT_FRAMEWORK) {
+    case constant.CLIENT_FRAMEWORK.ANGULAR:
+      util.addNavBarItem(
+        constant.NAV_BAR_TYPE.ITEM,
+        constant.NEEDLE.ADD_ELEMENT_TO_MENU,
+        generator.COVER_NAME,
+        generator.ROOT_ROUTE,
+        generator
+      );
+      break;
+    case constant.CLIENT_FRAMEWORK.REACT:
+      updateRoutes(generator);
+      updateHeader(generator);
+      break;
+  }
+
+  
   // Autogenerate i18n menu
   if (generator.ENABLE_TRANSLATION === true) {
     util.autoGenerateI18nMenu(
@@ -252,8 +269,202 @@ function getFiles(generator) {
         },
       ];
     case constant.CLIENT_FRAMEWORK.REACT:
-      return null; // Not supported
+    return [
+      /*{
+        NAME: "INDEX",
+        FROM: `${COVER_TYPE}/${CLIENT_FRAMEWORK}/index.ts.ejs`,
+        TO: `${CLIENT_MAIN_SRC_DIR}app/${ROOT_ROUTE}${COVER_NAME}/index.ts`,
+        METHOD: 'TEMPLATE',
+      },*/
+      {
+        NAME: "ICON_LOADER",
+        FROM: `${COVER_TYPE}/${CLIENT_FRAMEWORK}/icon-loader.tsx.ejs`,
+        TO: `${CLIENT_MAIN_SRC_DIR}app/${ROOT_ROUTE}${COVER_NAME}/icon-loader.tsx`,
+        METHOD: 'TEMPLATE',
+      },
+      {
+        NAME: "COMPONENT",
+        FROM: `${COVER_TYPE}/${CLIENT_FRAMEWORK}/component.tsx.ejs`,
+        TO: `${CLIENT_MAIN_SRC_DIR}app/${ROOT_ROUTE}${COVER_NAME}/component.tsx`,
+        METHOD: 'TEMPLATE',
+      },
+      /*{
+        NAME: "MODULE",
+        FROM: `${COVER_TYPE}/${CLIENT_FRAMEWORK}/module.ts.ejs`,
+        TO: `${CLIENT_MAIN_SRC_DIR}app/${ROOT_ROUTE}${COVER_NAME}/module.ts`,
+        METHOD: 'TEMPLATE',
+      },*/
+      {
+        NAME: "ITEM",
+        FROM: `${COVER_TYPE}/${CLIENT_FRAMEWORK}/navbar.item.tsx.ejs`,
+        TO: `${CLIENT_MAIN_SRC_DIR}app/${ROOT_ROUTE}${COVER_NAME}/navbar.item.tsx`,
+        METHOD: 'TEMPLATE',
+      },
+      /*{
+        NAME: "HTML",
+        FROM: `${COVER_TYPE}/${CLIENT_FRAMEWORK}/component.html.ejs`,
+        TO: `${CLIENT_MAIN_SRC_DIR}app/${ROOT_ROUTE}${COVER_NAME}/component.html`,
+        METHOD: 'TEMPLATE',
+      },*/
+      {
+        NAME: "TEST",
+        FROM: `${COVER_TYPE}/${CLIENT_FRAMEWORK}/test/component.spec.ts.ejs`,
+        TO: `${CLIENT_TEST_SRC_DIR}spec/app/${ROOT_ROUTE}${COVER_NAME}/component.spec.ts`,
+        METHOD: 'TEMPLATE',
+      },
+      {
+        NAME: "LOGO_ALTERNATE",
+        FROM: `${COVER_TYPE}/content/images/logo/logo-alternate.png`,
+        TO: `${CLIENT_MAIN_SRC_DIR}static/images/logo/icons/logo-alternate.png`,
+        METHOD: 'CONTENT',
+      },
+      {
+        NAME: "CUBE_ICON_TS",
+        FROM: `${COVER_TYPE}/content/icon/solid/faCube.d.ts`,
+        TO: `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faCube.d.ts`,
+        METHOD: 'CONTENT',
+      },
+      {
+        NAME: "CUBE_ICON_JS",
+        FROM: `${COVER_TYPE}/content/icon/solid/faCube.js`,
+        TO: `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faCube.js`,
+        METHOD: 'CONTENT',
+      },
+      {
+        NAME: "BULLHORN_ICON_TS",
+        FROM: `${COVER_TYPE}/content/icon/solid/faBullhorn.d.ts`,
+        TO: `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faBullhorn.d.ts`,
+        METHOD: 'CONTENT',
+      },
+      {
+        NAME: "BULLHORN_ICON_JS",
+        FROM: `${COVER_TYPE}/content/icon/solid/faBullhorn.js`,
+        TO: `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faBullhorn.js`,
+        METHOD: 'CONTENT',
+      },
+      {
+        NAME: "CHARTLINE_ICON_TS",
+        FROM: `${COVER_TYPE}/content/icon/solid/faChartLine.d.ts`,
+        TO: `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faChartLine.d.ts`,
+        METHOD: 'CONTENT',
+      },
+      {
+        NAME: "CHARTLINE_ICON_JS",
+        FROM: `${COVER_TYPE}/content/icon/solid/faChartLine.js`,
+        TO: `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faChartLine.js`,
+        METHOD: 'CONTENT',
+      },
+      {
+        NAME: "COGS_ICON_TS",
+        FROM: `${COVER_TYPE}/content/icon/solid/faCogs.d.ts`,
+        TO: `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faCogs.d.ts`,
+        METHOD: 'CONTENT',
+      },
+      {
+        NAME: "COGS_ICON_JS",
+        FROM: `${COVER_TYPE}/content/icon/solid/faCogs.js`,
+        TO: `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faCogs.js`,
+        METHOD: 'CONTENT',
+      },
+      {
+        NAME: "CUBES_ICON_TS",
+        FROM: `${COVER_TYPE}/content/icon/solid/faCubes.d.ts`,
+        TO: `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faCubes.d.ts`,
+        METHOD: 'CONTENT',
+      },
+      {
+        NAME: "CUBES_ICON_JS",
+        FROM: `${COVER_TYPE}/content/icon/solid/faCubes.js`,
+        TO: `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faCubes.js`,
+        METHOD: 'CONTENT',
+      },
+      {
+        NAME: "MAGIC_ICON_TS",
+        FROM: `${COVER_TYPE}/content/icon/solid/faMagic.d.ts`,
+        TO: `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faMagic.d.ts`,
+        METHOD: 'CONTENT',
+      },
+      {
+        NAME: "MAGIC_ICON_JS",
+        FROM: `${COVER_TYPE}/content/icon/solid/faMagic.js`,
+        TO: `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faMagic.js`,
+        METHOD: 'CONTENT',
+      },
+      {
+        NAME: "SERVER_ICON_TS",
+        FROM: `${COVER_TYPE}/content/icon/solid/faServer.d.ts`,
+        TO: `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faServer.d.ts`,
+        METHOD: 'CONTENT',
+      },
+      {
+        NAME: "SERVER_ICON_JS",
+        FROM: `${COVER_TYPE}/content/icon/solid/faServer.js`,
+        TO: `${CLIENT_MAIN_SRC_DIR}app/shared/icon/solid/faServer.js`,
+        METHOD: 'CONTENT',
+      },
+    ];
     default:
       return null; // Not supported
   }
+}
+
+async function updateRoutes(generator){
+  await addRouteImport(generator) // Wait for this
+  await addRoute(generator) // Then wait for that
+};
+
+
+function addRoute(generator) {
+  const file = constant.PATH.ROUTE_REACT+`routes.tsx`;
+  const pattern = `<ErrorBoundaryRoute path="/" component={Home} />`;
+  const content = `<ErrorBoundaryRoute path="/${_.kebabCase(generator.COVER_NAME)}" component={${_.startCase(generator.COVER_NAME)}} />
+      <ErrorBoundaryRoute path="/" component={Home} />`
+  util.replaceContent({
+    file: file,
+    pattern,
+    content, 
+  },generator);
+}
+
+function addRouteImport(generator) {
+  const file = constant.PATH.ROUTE_REACT+`routes.tsx`;
+  const pattern = `import { AUTHORITIES } from 'app/config/constants';`;
+  const content = `import { AUTHORITIES } from 'app/config/constants';
+
+import ${_.startCase(generator.COVER_NAME)} from 'app/${generator.ROOT_ROUTE}${_.kebabCase(generator.COVER_NAME)}/component';`;
+  util.replaceContent({
+    file: file,
+    pattern,
+    content
+  },generator);
+}
+
+async function updateHeader(generator){
+  await addHeaderImport(generator) // Wait for this
+  await addHeader(generator) // Then wait for that
+};
+
+function addHeader(generator) {
+  const file = constant.PATH.HEADER_REACT+`header.tsx`;
+  const pattern = `<Home />`;
+  const content = `<Home />
+              <${_.startCase(generator.COVER_NAME)} />`
+  util.replaceContent({
+    file: file,
+    pattern,
+    content, 
+  },generator);
+}
+
+function addHeaderImport(generator) {
+  const file = constant.PATH.HEADER_REACT+`header.tsx`;
+  const pattern = `import React from 'react';`;
+  const content = `import React from 'react';
+
+import ${_.startCase(generator.COVER_NAME)} from 'app/${generator.ROOT_ROUTE}${_.kebabCase(generator.COVER_NAME)}/navbar.item';`;
+  util.replaceContent({
+    file: file,
+    pattern,
+    content
+  },generator);
 }

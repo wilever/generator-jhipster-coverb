@@ -45,7 +45,9 @@ module.exports = {
             COMPANY: 'company',
         },
         REACT: {
-            // NOT SUPPORTED
+            DEFAULT: 'default',
+            RESUME: 'resume',
+            COMPANY: 'company',
         }
     },
     MESSAGE:{
@@ -64,6 +66,8 @@ module.exports = {
         CLIENT_MAIN_SRC_DIR,
         CLIENT_TEST_SRC_DIR,
         MODULE: CLIENT_MAIN_SRC_DIR+'app/app.module.ts',
+        ROUTE_REACT: CLIENT_MAIN_SRC_DIR+'app/',
+        HEADER_REACT: CLIENT_MAIN_SRC_DIR+'app/shared/layout/header/',
         NAV_BAR: CLIENT_MAIN_SRC_DIR+'app/layouts/navbar/navbar.component.html',
         VENDOR: 'src/main/webapp/app/vendor.ts'
     }
