@@ -7,7 +7,8 @@ module.exports = {
     TEST_CASE: {
         CSS: 'css',
         SCSS: 'scss',
-        MULTI_LANGUAGE: 'multi-language'
+        CSS_MULTI_LANGUAGE: 'multi-language/css',
+        SCSS_MULTI_LANGUAGE: 'multi-language/scss'
     },
     ROOT_ROUTE: '',
     DEMO_ROOT_ROUTE: 'coverb/',
@@ -44,7 +45,9 @@ module.exports = {
             COMPANY: 'company',
         },
         REACT: {
-            // NOT SUPPORTED
+            DEFAULT: 'default',
+            RESUME: 'resume',
+            COMPANY: 'company',
         }
     },
     MESSAGE:{
@@ -63,6 +66,8 @@ module.exports = {
         CLIENT_MAIN_SRC_DIR,
         CLIENT_TEST_SRC_DIR,
         MODULE: CLIENT_MAIN_SRC_DIR+'app/app.module.ts',
+        ROUTE_REACT: CLIENT_MAIN_SRC_DIR+'app/',
+        HEADER_REACT: CLIENT_MAIN_SRC_DIR+'app/shared/layout/header/',
         NAV_BAR: CLIENT_MAIN_SRC_DIR+'app/layouts/navbar/navbar.component.html',
         VENDOR: 'src/main/webapp/app/vendor.ts'
     }

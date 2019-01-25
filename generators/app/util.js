@@ -4,6 +4,7 @@ const jhipsterUtils = require('generator-jhipster/generators/utils');
 const packageJson = require('../../package.json');
 const semver = require('semver');
 const chalk = require('chalk');
+const shelljs = require('shelljs');
 
 module.exports = {
     writeCoverFiles,
@@ -17,7 +18,11 @@ module.exports = {
     getCoverList,
     getCoverListChoices,
     writeDemoFiles,
-    printCoverbLogo
+    printCoverbLogo,
+    getStyleSuffixForTestCase,
+    getMultiLanguageForTestCase,
+    replaceContent,
+    removeFile
 };
 /**
  * Print coverb logo
@@ -31,7 +36,7 @@ function printCoverbLogo(generator) {
     generator.log(`${chalk.blue('##       ##     ##  ##   ##  ##       ##   ##  ')}${chalk.green(' ##     ## ')}`);
     generator.log(`${chalk.blue('##    ## ##     ##   ## ##   ##       ##    ## ')}${chalk.green(' ##     ## ')}`);
     generator.log(`${chalk.blue(' ######   #######     ###    ######## ##     ##')}${chalk.green(' ########  ')}\n`);
-    generator.success('You are working with coverb version: '+chalk.green.bold(packageJson.version)+'\n');
+    generator.success('You are working with coverb version2: '+chalk.green.bold(packageJson.version)+'\n');
     generator.log(chalk.white.bold('This is a jhipster module see more on https://www.jhipster.tech \n'));
     
 }
@@ -57,7 +62,7 @@ function getCoverList(CLIENT_FRAMEWORK) {
         case constant.CLIENT_FRAMEWORK.ANGULAR:
             return constant.COVER_TYPE.ANGULAR;
         case constant.CLIENT_FRAMEWORK.REACT:
-            return null; // NO SUPPORTED
+            return constant.COVER_TYPE.REACT;
         default:
         // OTHER CLIENT FRAMEWORK NOT SUPPORTED
             return null;
@@ -337,4 +342,50 @@ function addAngularModule(ANGULAR_X_APP_NAME, COVER_NAME, ROOT_ROUTE, generator)
         constant.NEEDLE.ADD_ANGULAR_MODULE,
         generator
     );
+}
+/**
+ * Get style suffix for TEST_CASE
+ * 
+ * @param {} TEST_CASE 
+ */
+function getStyleSuffixForTestCase(TEST_CASE) {
+    switch (TEST_CASE) {
+      case constant.TEST_CASE.CSS:
+        return 'css';
+      case constant.TEST_CASE.SCSS:
+        return 'scss';
+      case constant.TEST_CASE.CSS_MULTI_LANGUAGE:
+        return 'css';
+      case constant.TEST_CASE.SCSS_MULTI_LANGUAGE:
+        return 'scss';
+      default:
+        return 'style for test case not defined';
+    }
+}
+/**
+ * Get multilanguage flag for TEST_CASE
+ * 
+ * @param {} TEST_CASE 
+ */
+function getMultiLanguageForTestCase(TEST_CASE) {
+    switch (TEST_CASE) {
+      case constant.TEST_CASE.CSS:
+        return false;
+      case constant.TEST_CASE.SCSS:
+        return false;
+      case constant.TEST_CASE.CSS_MULTI_LANGUAGE:
+        return true;
+      case constant.TEST_CASE.SCSS_MULTI_LANGUAGE:
+        return true;
+      default:
+        return 'multilanguage for test case not defined';
+    }
+}
+
+function replaceContent(args, generator){
+    jhipsterUtils.replaceContent(args,generator);
+}
+
+function removeFile(file, generator){
+    generator.removeFile(file);
 }

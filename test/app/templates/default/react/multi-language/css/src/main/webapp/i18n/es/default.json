@@ -1,0 +1,17 @@
+{
+  "default": {
+    "page": {
+      "title": "[ES] Default"
+    },
+    "title": "[ES] What is coverb?",
+    "description": "[ES] It is a page generator for jhipster application",
+    "feature": {
+      "title": "[ES] Features",
+      "description": "[ES] What we offer?"
+    },
+    "portafolio": {
+      "title": "[ES] Portafolio",
+      "description": "[ES] What did we already created?"
+    }
+  }
+}

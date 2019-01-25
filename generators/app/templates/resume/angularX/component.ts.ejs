@@ -1,13 +1,10 @@
 import { Component } from '@angular/core';
+import './icon_loader';
 
 @Component({
   selector: 'jhi-<%=_.kebabCase(COVER_NAME)%>',
   templateUrl: './component.html',
-  styleUrls: [
-    'style<%=USE_SASS ? '.scss' : '.css'%>'
-  ]
+  styleUrls: ['style<%=USE_SASS ? '.scss' : '.css'%>']
 })
 
-export class <%=_.upperFirst(_.camelCase(COVER_NAME))%>Component {
-
-}
+export class <%=_.upperFirst(_.camelCase(COVER_NAME))%>Component { }

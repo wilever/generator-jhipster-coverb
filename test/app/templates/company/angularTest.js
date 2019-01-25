@@ -71,7 +71,7 @@ describe(`COVER_TYPE: ${COVER_TYPE} CLIENT_FRAMEWORK: ${CLIENT_FRAMEWORK}\n`, ()
         assert.file(expectedFiles.CONTENT);
       });
 
-      if (TEST_CASE === core.constant.TEST_CASE.MULTI_LANGUAGE) {
+      if (core.util.getMultiLanguageForTestCase(TEST_CASE)) {
         it('i18n files has right content\n', () => {
           _.forEach(expectedFiles.I18N, file => {
             actualContent = fs.readFileSync(file, 'utf8');

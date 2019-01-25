@@ -23,7 +23,6 @@ function files(CLIENT_FRAMEWORK, ROOT_ROUTE) {
         CHANGED: [
           `${CLIENT_MAIN_SRC_DIR}/app/layouts/navbar/navbar.component.html`,
           `${CLIENT_MAIN_SRC_DIR}/app/app.module.ts`,
-          constant.PATH.VENDOR,
           `package.json`,
           `${CLIENT_MAIN_SRC_DIR}i18n/en/global.json`,
           `${CLIENT_MAIN_SRC_DIR}i18n/es/global.json`,
@@ -31,7 +30,20 @@ function files(CLIENT_FRAMEWORK, ROOT_ROUTE) {
         ]
       };
     case constant.CLIENT_FRAMEWORK.REACT:
-      return null; // Not supported
+    return {
+      ADDED: [
+        `${CLIENT_MAIN_SRC_DIR}app/${ROOT_ROUTE}/icon-loader.tsx`,
+        `${CLIENT_MAIN_SRC_DIR}app/${ROOT_ROUTE}/index.tsx`,
+        `${CLIENT_MAIN_SRC_DIR}app/${ROOT_ROUTE}/navbar.menu.tsx`,
+      ],
+      CHANGED: [
+        `${CLIENT_MAIN_SRC_DIR}app/routes.tsx`,
+        `${CLIENT_MAIN_SRC_DIR}i18n/en/global.json`,
+        `${CLIENT_MAIN_SRC_DIR}i18n/es/global.json`,
+        `${CLIENT_MAIN_SRC_DIR}i18n/fr/global.json`,
+        `tsconfig.json`
+      ],
+    };
     default:
       return null; // Not supported
   }
