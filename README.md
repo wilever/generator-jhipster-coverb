@@ -5,20 +5,18 @@
         <i>develop by 
             <a href="https://twitter.com/jhipster_latino/">
             @jhipster_latino</a></i></h3>
-     <hr/>
 
+#
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
 
 Coverb is a jhipster module that generates a pages for your jhipster application. To learn more about this module, see [wiki](https://github.com/jhipster-latino/coverb/wiki).
 
-## Prerequisites
+# Prerequisites
 
 - As this is a [JHipster](http://www.jhipster.tech/) module, we expect you to have an existing [JHipster app](https://www.jhipster.tech/creating-an-app/).
 - Jhipster version must be greater or equal than 5.X.X
 
-<hr />
-
-## Usage
+# Usage
 
 1. [Create a JHipster app](https://www.jhipster.tech/creating-an-app/)
 2. [Install coverb](#install)
@@ -26,7 +24,7 @@ Coverb is a jhipster module that generates a pages for your jhipster application
     ```
     yo jhipster-coverb
     ```
-3. Select your [cover type](#cover-type):
+3. Select your cover type
     ```
     ? Which type do you prefer? (Use arrow keys)
     ❯ default 
@@ -39,13 +37,11 @@ Coverb is a jhipster module that generates a pages for your jhipster application
     ```
 5. Enjoy it!
     ```
-        npm start
+    npm start
     ```
-<hr />
-
-## Installation
-
-### with NPM
+#
+# Install
+## with NPM
 To install this module:
 ```
 npm install -g generator-jhipster-coverb
@@ -56,7 +52,6 @@ npm update -g generator-jhipster-coverb
 ```
 ### with Yarn
 To install this module:
-
 ```
 yarn global add generator-jhipster-coverb
 ```
@@ -65,46 +60,25 @@ To update this module:
 ```
 yarn global upgrade generator-jhipster-coverb
 ```
-<hr />
-
-## Start demo
-
+#
+# Start demo
 To run coverb demo on your application:
-
 ```
 yo jhipster-coverb:demo
 ```
-<hr />
-
-## Live demo
+#
+# Live demo
 <p align="center">
     <a href="https://coverb-demo-angular.herokuapp.com/">
-        <img width= "256px"
+        <img width= "256px" style="margin:25px 50px"
         src="content/qr-angular-demo.png"></a>
-    <br /> <br />
     <a href="https://coverb-demo-react.herokuapp.com/">
-        <img width= "256px"
+        <img width= "256px" style="margin:25px 50px"
         src="content/qr-react-demo.png"></a>
     </p>
-<h1></h1>
 
-<h1 align="center">
-   Cover Type</h1>
-
-<p align="center">
-    <img width= "256px"
-    src="generators/app/templates/default/content/images/resume.png">
-    <br />
-    Resume
-    <br />
-    <img width= "256px"
-    src="generators/app/templates/default/content/images/company.png">
-    <br />
-    Company
-    </p>
-<hr />
-
-## License
+#
+# License
 
 Apache-2.0 ©
 
