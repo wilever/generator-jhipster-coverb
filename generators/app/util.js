@@ -22,7 +22,8 @@ module.exports = {
     getStyleSuffixForTestCase,
     getMultiLanguageForTestCase,
     replaceContent,
-    removeFile
+    removeFile,
+    excludeIcons
 };
 /**
  * Print coverb logo
@@ -388,4 +389,22 @@ function replaceContent(args, generator){
 
 function removeFile(file, generator){
     generator.removeFile(file);
+}
+/**
+ * Exlude icon from webpack build for react client
+ * @param {} generator 
+ */
+function excludeIcons(generator) {
+    const file = `tsconfig.json`;
+    const pattern = `"node_modules"`;
+    const content = pattern+`,
+    "${constant.PATH.ICON}"`;
+    replaceContent(
+      {
+        file: file,
+        pattern,
+        content
+      },
+      generator
+    );
 }

@@ -36,7 +36,8 @@ function run(generator) {
       util.copyFiles(getFiles(generator), generator);
       updateRoutes(generator);
       updateHeader(generator);
-      excludeIcons(generator);
+      util.excludeIcons(generator);
+      //excludeIcons(generator);
       break;
   }
   // Add i18n support to menu nav bar
@@ -323,19 +324,5 @@ async function asyncForEach(array, callback) {
 }
 
 function excludeIcons(generator) {
-  const file = `tsconfig.json`;
-  const pattern = `"node_modules"`;
-  const content = `"node_modules",
-    "${constant.PATH.ICON}"`;
-  /*
-  const content = `"node_modules",
-    "src/main/webapp/app/shared/icon"`;*/
-  util.replaceContent(
-    {
-      file: file,
-      pattern,
-      content
-    },
-    generator
-  );
+  util.excludeIcons(generator);
 }
