@@ -306,23 +306,3 @@ import ${_.startCase(generator.ROOT_ROUTE)} from 'app/${
     generator
   );
 }
-
-async function clean(generator) {
-  generator.info(`delete: ${generator.COVER_NAME}/navbar.item.tsx`);
-  await util.removeFile(
-    `${CLIENT_MAIN_SRC_DIR}app/${generator.ROOT_ROUTE}${
-      generator.COVER_NAME
-    }/navbar.item.tsx`,
-    generator
-  );
-}
-
-async function asyncForEach(array, callback) {
-  for (let index = 0; index < array.length; index++) {
-    await callback(array[index], index, array);
-  }
-}
-
-function excludeIcons(generator) {
-  util.excludeIcons(generator);
-}
