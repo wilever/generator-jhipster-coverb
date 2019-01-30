@@ -326,7 +326,10 @@ function excludeIcons(generator) {
   const file = `tsconfig.json`;
   const pattern = `"node_modules"`;
   const content = `"node_modules",
-    "src/main/webapp/app/shared/icon"`;
+    "${constant.PATH.ICON}"`;
+  /*
+  const content = `"node_modules",
+    "src/main/webapp/app/shared/icon"`;*/
   util.replaceContent(
     {
       file: file,
