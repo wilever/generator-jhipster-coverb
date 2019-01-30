@@ -109,8 +109,8 @@ function postWrite(generator) {
       );
       break;
     case constant.CLIENT_FRAMEWORK.REACT:
-      updateRoutes(generator);
-      updateHeader(generator);
+      util.updateHeaderByCover(generator);
+      util.updateRouteByCover(generator);
       util.excludeIcons(generator);
       break;
   }
@@ -271,12 +271,6 @@ function getFiles(generator) {
       ];
     case constant.CLIENT_FRAMEWORK.REACT:
     return [
-      /*{
-        NAME: "INDEX",
-        FROM: `${COVER_TYPE}/${CLIENT_FRAMEWORK}/index.ts.ejs`,
-        TO: `${CLIENT_MAIN_SRC_DIR}app/${ROOT_ROUTE}${COVER_NAME}/index.ts`,
-        METHOD: 'TEMPLATE',
-      },*/
       {
         NAME: "ICON_LOADER",
         FROM: `${COVER_TYPE}/${CLIENT_FRAMEWORK}/icon-loader.tsx.ejs`,
@@ -289,24 +283,12 @@ function getFiles(generator) {
         TO: `${CLIENT_MAIN_SRC_DIR}app/${ROOT_ROUTE}${COVER_NAME}/component.tsx`,
         METHOD: 'TEMPLATE',
       },
-      /*{
-        NAME: "MODULE",
-        FROM: `${COVER_TYPE}/${CLIENT_FRAMEWORK}/module.ts.ejs`,
-        TO: `${CLIENT_MAIN_SRC_DIR}app/${ROOT_ROUTE}${COVER_NAME}/module.ts`,
-        METHOD: 'TEMPLATE',
-      },*/
       {
         NAME: "ITEM",
         FROM: `${COVER_TYPE}/${CLIENT_FRAMEWORK}/navbar.item.tsx.ejs`,
         TO: `${CLIENT_MAIN_SRC_DIR}app/${ROOT_ROUTE}${COVER_NAME}/navbar.item.tsx`,
         METHOD: 'TEMPLATE',
       },
-      /*{
-        NAME: "HTML",
-        FROM: `${COVER_TYPE}/${CLIENT_FRAMEWORK}/component.html.ejs`,
-        TO: `${CLIENT_MAIN_SRC_DIR}app/${ROOT_ROUTE}${COVER_NAME}/component.html`,
-        METHOD: 'TEMPLATE',
-      },*/
       {
         NAME: "TEST",
         FROM: `${COVER_TYPE}/${CLIENT_FRAMEWORK}/test/component.spec.ts.ejs`,
@@ -407,65 +389,4 @@ function getFiles(generator) {
     default:
       return null; // Not supported
   }
-}
-
-async function updateRoutes(generator){
-  await addRouteImport(generator) // Wait for this
-  await addRoute(generator) // Then wait for that
-};
-
-
-function addRoute(generator) {
-  const file = constant.PATH.ROUTE_REACT+`routes.tsx`;
-  const pattern = `<ErrorBoundaryRoute path="/" component={Home} />`;
-  const content = `<ErrorBoundaryRoute path="/${_.kebabCase(generator.COVER_NAME)}" component={${_.startCase(generator.COVER_NAME)}} />
-      <ErrorBoundaryRoute path="/" component={Home} />`
-  util.replaceContent({
-    file: file,
-    pattern,
-    content, 
-  },generator);
-}
-
-function addRouteImport(generator) {
-  const file = constant.PATH.ROUTE_REACT+`routes.tsx`;
-  const pattern = `import { AUTHORITIES } from 'app/config/constants';`;
-  const content = `import { AUTHORITIES } from 'app/config/constants';
-
-import ${_.startCase(generator.COVER_NAME)} from 'app/${generator.ROOT_ROUTE}${_.kebabCase(generator.COVER_NAME)}/component';`;
-  util.replaceContent({
-    file: file,
-    pattern,
-    content
-  },generator);
-}
-
-async function updateHeader(generator){
-  await addHeaderImport(generator) // Wait for this
-  await addHeader(generator) // Then wait for that
-};
-
-function addHeader(generator) {
-  const file = constant.PATH.HEADER_REACT+`header.tsx`;
-  const pattern = `<Home />`;
-  const content = `<Home />
-              <${_.startCase(generator.COVER_NAME)} />`
-  util.replaceContent({
-    file: file,
-    pattern,
-    content, 
-  },generator);
-}
-
-function addHeaderImport(generator) {
-  const file = constant.PATH.HEADER_REACT+`header.tsx`;
-  const pattern = `import React from 'react';`;
-  const content = `import React from 'react';
-
-import ${_.startCase(generator.COVER_NAME)} from 'app/${generator.ROOT_ROUTE}${_.kebabCase(generator.COVER_NAME)}/navbar.item';`;
-  util.replaceContent({
-    file: file,
-    pattern,
-    content
-  },generator);
 }

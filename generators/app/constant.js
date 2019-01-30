@@ -71,6 +71,5 @@ module.exports = {
         NAV_BAR: CLIENT_MAIN_SRC_DIR+'app/layouts/navbar/navbar.component.html',
         VENDOR: 'src/main/webapp/app/vendor.ts',
         ICON: 'src/main/webapp/app/shared/icon'
-        
     }
 };

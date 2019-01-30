@@ -1,7 +1,6 @@
 import './header.scss';
 
 import React from 'react';
-
 import Default from 'app/default/navbar.item';
 
 export default class Header extends React.Component<IHeaderProps, IHeaderState> {

@@ -1,5 +1,4 @@
 import { AUTHORITIES } from 'app/config/constants';
-
 import Resume from 'app/resume/component';
 
 const Routes = () => (
