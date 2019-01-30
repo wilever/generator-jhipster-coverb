@@ -388,11 +388,19 @@ function getMultiLanguageForTestCase(TEST_CASE) {
         return 'multilanguage for test case not defined';
     }
 }
-
+/**
+ * Replace content
+ * @param {*} args 
+ * @param {*} generator 
+ */
 function replaceContent(args, generator){
     jhipsterUtils.replaceContent(args,generator);
 }
-
+/**
+ * remove file
+ * @param {*} file 
+ * @param {*} generator 
+ */
 function removeFile(file, generator){
     generator.removeFile(file);
 }
@@ -414,12 +422,18 @@ function excludeIcons(generator) {
       generator
     );
 }
-
+/**
+ * Update route by cover
+ * @param {*} generator 
+ */
 async function updateRouteByCover(generator){
     addRouteByCover(generator);
     await addRouteImportByCover(generator);
   };
-
+/**
+ * Add route by cover
+ * @param {*} generator 
+ */
 function addRouteByCover(generator) {
     const file = constant.PATH.ROUTE_REACT+`routes.tsx`;
     const pattern = `<ErrorBoundaryRoute path="/" component={Home} />`;
@@ -431,7 +445,10 @@ function addRouteByCover(generator) {
         content, 
     },generator);
 }
-
+/**
+ * Add route import by cover
+ * @param {*} generator 
+ */
 function addRouteImportByCover(generator) {
     const file = constant.PATH.ROUTE_REACT+`routes.tsx`;
     const pattern = `import { AUTHORITIES } from 'app/config/constants';`;
@@ -443,12 +460,18 @@ import ${_.startCase(generator.COVER_NAME)} from 'app/${generator.ROOT_ROUTE}${_
         content
     },generator);
 }
-
+/**
+ * Update header by cover
+ * @param {*} generator 
+ */
 async function updateHeaderByCover(generator){
     addHeaderImportByCover(generator) // Wait for this
     await addHeaderByCover(generator) // Then wait for that
   };
-
+/**
+ * Add header by cover
+ * @param {*} generator 
+ */
 function addHeaderByCover(generator) {
     const file = constant.PATH.HEADER_REACT+`header.tsx`;
     const pattern = `<Home />`;
@@ -460,7 +483,10 @@ function addHeaderByCover(generator) {
         content, 
     },generator);
 }
-
+/**
+ * Add header import by cover
+ * @param {*} generator 
+ */
 function addHeaderImportByCover(generator) {
     const file = constant.PATH.HEADER_REACT+`header.tsx`;
     const pattern = `import React from 'react';`;
