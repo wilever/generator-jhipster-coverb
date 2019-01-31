@@ -13,7 +13,6 @@
 [![angular](https://img.shields.io/badge/angular-suported-blue.svg)](https://shields.io/)
 [![i18n](https://img.shields.io/badge/i18n-suported-orange.svg)](https://shields.io/)
 [![demo](https://img.shields.io/badge/demo-on-<COLOR>.svg)](https://shields.io/)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 
 Coverb is a jhipster module that generates a pages for your jhipster application. To learn more about this module, see [wiki](https://github.com/jhipster-latino/coverb/wiki).
 
