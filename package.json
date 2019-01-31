@@ -1,13 +1,16 @@
 {
   "name": "generator-jhipster-coverb",
-  "version": "1.0.5",
+  "version": "BETA-0",
   "description": "A JHipster Module that generates a cover page",
   "keywords": [
     "yeoman-generator",
     "jhipster",
     "jhipster-module",
     "jhipster-latino",
-    "coverb"
+    "coverb",
+    "bootstrap",
+    "angular",
+    "react"
   ],
   "homepage": "https://github.com/jhipster-latino/generator-jhispter-coverb",
   "author": {
