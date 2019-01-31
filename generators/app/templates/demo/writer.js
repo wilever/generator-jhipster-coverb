@@ -34,8 +34,9 @@ function run(generator) {
     case constant.CLIENT_FRAMEWORK.REACT:
       // Write required files
       util.copyFiles(getFiles(generator), generator);
-      updateRoutes(generator);
+      updateRoute(generator);
       updateHeader(generator);
+      util.excludeIcons(generator);
       break;
   }
   // Add i18n support to menu nav bar
@@ -93,7 +94,7 @@ function postWrite(generator) {
       );
       break;
     case constant.CLIENT_FRAMEWORK.REACT:
-      updateRoutes2(generator);
+      updateRouteByCover(generator);
       updateMenu(generator);
       break;
     default:
@@ -138,12 +139,18 @@ function getFiles(generator) {
       return null; // Not supported
   }
 }
-
+/**
+ * Add nav item
+ * @param {*} generator 
+ */
 async function updateMenu(generator) {
   addItem(generator); // Then wait for that
   await addItemImport(generator); // Wait for this
 }
-
+/**
+ * Add nav item
+ * @param {*} generator 
+ */
 function addItem(generator) {
   const file = `${CLIENT_MAIN_SRC_DIR}app/${
     generator.ROOT_ROUTE
@@ -165,7 +172,10 @@ function addItem(generator) {
     generator
   );
 }
-
+/**
+ * Add nav item import
+ * @param {*} generator 
+ */
 function addItemImport(generator) {
   const file = `${CLIENT_MAIN_SRC_DIR}app/${
     generator.ROOT_ROUTE
@@ -184,12 +194,18 @@ function addItemImport(generator) {
     generator
   );
 }
-
-async function updateRoutes(generator) {
-  addRouteImport(generator); // Wait for this
-  await addRoute(generator); // Then wait for that
+/**
+ * Add route
+ * @param {*} generator 
+ */
+async function updateRoute(generator) {
+  addRouteImport(generator); 
+  await addRoute(generator); // Wait for this
 }
-
+/**
+ * Add route
+ * @param {*} generator 
+ */
 function addRoute(generator) {
   const file = constant.PATH.ROUTE_REACT + `routes.tsx`;
   const pattern = `<ErrorBoundaryRoute path="/" component={Home} />`;
@@ -206,12 +222,14 @@ function addRoute(generator) {
     generator
   );
 }
-
+/**
+ * Add route import
+ * @param {*} generator 
+ */
 function addRouteImport(generator) {
   const file = constant.PATH.ROUTE_REACT + `routes.tsx`;
   const pattern = `import { AUTHORITIES } from 'app/config/constants';`;
   const content = `import { AUTHORITIES } from 'app/config/constants';
-
 import ${_.startCase(generator.ROOT_ROUTE)} from 'app/${_.kebabCase(
     generator.ROOT_ROUTE
   )}';`;
@@ -224,15 +242,19 @@ import ${_.startCase(generator.ROOT_ROUTE)} from 'app/${_.kebabCase(
     generator
   );
 }
-
-async function updateRoutes2(generator) {
-  //generator.error('updateRoutes2: '+ generator.COVER_NAME);
-  addRouteImport2(generator); // Wait for this
-  await addRoute2(generator); // Then wait for that
+/**
+ * Add route by cover
+ * @param {*} generator 
+ */
+async function updateRouteByCover(generator) {
+  addRouteImportByCover(generator); 
+  await addRouteByCover(generator); // Wait for this
 }
-
-function addRoute2(generator) {
-  // TODO
+/**
+ * Add route by cover
+ * @param {*} generator 
+ */
+function addRouteByCover(generator) {
   const file = `${CLIENT_MAIN_SRC_DIR}app/${generator.ROOT_ROUTE}/index.tsx`;
   const pattern = `{/* jhipster-needle-add-route-path - JHipster will routes here */}`;
   const content = `<ErrorBoundaryRoute path={\`\${match.url}/${_.kebabCase(
@@ -248,9 +270,11 @@ function addRoute2(generator) {
     generator
   );
 }
-
-function addRouteImport2(generator) {
-  //TODO
+/**
+ * Add route import
+ * @param {*} generator 
+ */
+function addRouteImportByCover(generator) {
   const file = `${CLIENT_MAIN_SRC_DIR}app/${generator.ROOT_ROUTE}/index.tsx`;
   const pattern = `/* jhipster-needle-add-route-import - JHipster will add routes here */`;
   const content = `import ${_.startCase(generator.COVER_NAME)} from 'app/${
@@ -266,12 +290,18 @@ function addRouteImport2(generator) {
     generator
   );
 }
-
+/**
+ * Add nav menu
+ * @param {*} generator 
+ */
 async function updateHeader(generator) {
-  addHeaderImport(generator); // Wait for this
-  await addHeader(generator); // Then wait for that
+  addHeaderImport(generator);
+  await addHeader(generator); // Wait for this
 }
-
+/**
+ *  Add nav menu
+ * @param {*} generator 
+ */
 function addHeader(generator) {
   const file = constant.PATH.HEADER_REACT + `header.tsx`;
   const pattern = `<Home />`;
@@ -286,12 +316,14 @@ function addHeader(generator) {
     generator
   );
 }
-
+/**
+ * Add nav menu import
+ * @param {*} generator 
+ */
 function addHeaderImport(generator) {
   const file = constant.PATH.HEADER_REACT + `header.tsx`;
   const pattern = `import React from 'react';`;
   const content = `import React from 'react';
-
 import ${_.startCase(generator.ROOT_ROUTE)} from 'app/${
     generator.ROOT_ROUTE
   }/navbar.menu';`;
@@ -303,20 +335,4 @@ import ${_.startCase(generator.ROOT_ROUTE)} from 'app/${
     },
     generator
   );
-}
-
-async function clean(generator) {
-  generator.info(`delete: ${generator.COVER_NAME}/navbar.item.tsx`);
-  await util.removeFile(
-    `${CLIENT_MAIN_SRC_DIR}app/${generator.ROOT_ROUTE}${
-      generator.COVER_NAME
-    }/navbar.item.tsx`,
-    generator
-  );
-}
-
-async function asyncForEach(array, callback) {
-  for (let index = 0; index < array.length; index++) {
-    await callback(array[index], index, array);
-  }
 }

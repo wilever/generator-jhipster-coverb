@@ -34,7 +34,7 @@ function files(CLIENT_FRAMEWORK, TEST_CASE, ROOT_ROUTE) {
       CHANGED: [
         `${CLIENT_MAIN_SRC_DIR}/app/layouts/navbar/navbar.component.html`,
         `${CLIENT_MAIN_SRC_DIR}/app/app.module.ts`,
-        `package.json`,
+        `package.json`
       ],
       CONTENT: [
         `${CLIENT_MAIN_SRC_DIR}content/images/resume.png`,
@@ -77,6 +77,7 @@ function files(CLIENT_FRAMEWORK, TEST_CASE, ROOT_ROUTE) {
       CHANGED: [
         `${CLIENT_MAIN_SRC_DIR}app/routes.tsx`,
         `${CLIENT_MAIN_SRC_DIR}app/shared/layout/header/header.tsx`,
+        `tsconfig.json`
       ],
       CONTENT: [
         `${CLIENT_MAIN_SRC_DIR}static/images/resume.png`,

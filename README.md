@@ -1,99 +1,91 @@
-# generator-jhispter-coverb
+<p align="center">
+   <a href="https://github.com/jhipster-latino/generator-jhipster-coverb">
+     <img src="content/coverb-logo.png"></a></p>   
+     <h3 align="center">
+        <i>develop by 
+            <a href="https://twitter.com/jhipster_latino/">
+            @jhipster_latino</a></i></h3>
+
+#
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
-> A jhipster module that generates a pages for your jhipster application, see our [demo](#live-demo)
+[![jhipster](https://img.shields.io/badge/jhipster->=5.0.2-blue.svg)](https://shields.io/)
+[![react](https://img.shields.io/badge/react-suported-blue.svg)](https://shields.io/)
+[![angular](https://img.shields.io/badge/angular-suported-blue.svg)](https://shields.io/)
+[![i18n](https://img.shields.io/badge/i18n-suported-orange.svg)](https://shields.io/)
+[![demo](https://img.shields.io/badge/demo-on-<COLOR>.svg)](https://shields.io/)
 
-![feature-image](/generators/app/templates/default/content/images/coverb-feature.png)
+Coverb is a jhipster module that generates a pages for your jhipster application. To learn more about this module, see [wiki](https://github.com/jhipster-latino/coverb/wiki).
 
-## Introduction
-
-- This is a [JHipster](http://jhipster.github.io/) module.
-
-- You can use it to generate a page for your apps.
-- It use cover types as template for pages. 
-- It creates a corresponding navigation item in your JHipster application.
-
-To learn more about this module, see [wiki](https://github.com/jhipster-latino/coverb/wiki).
-
-## Prerequisites
+# Prerequisites
 
 - As this is a [JHipster](http://www.jhipster.tech/) module, we expect you to have an existing [JHipster app](https://www.jhipster.tech/creating-an-app/).
-- Jhipster version must be greater or equal than 5.2.0
+- Jhipster version must be greater or equal than 5.X.X
 
-## Installation
+# Usage
 
-### with NPM
-
+1. [Create a JHipster app](https://www.jhipster.tech/creating-an-app/)
+2. [Install coverb](#install)
+3. Start coverb on your application, or [execute demo](#start-demo)
+    ```
+    yo jhipster-coverb
+    ```
+3. Select your cover type
+    ```
+    ? Which type do you prefer? (Use arrow keys)
+    ❯ default 
+    resume 
+    company 
+    ```
+4. Select your cover name:
+    ```
+    ? Which name do you prefer? (myOwnResume) 
+    ```
+5. Enjoy it!
+    ```
+    npm start
+    ```
+#
+# Install
+## with NPM
 To install this module:
-
 ```
 npm install -g generator-jhipster-coverb
 ```
-
 To update this module:
-
 ```
 npm update -g generator-jhipster-coverb
 ```
-
 ### with Yarn
-
 To install this module:
-
 ```
 yarn global add generator-jhipster-coverb
 ```
-
 To update this module:
 
 ```
 yarn global upgrade generator-jhipster-coverb
 ```
-
-## Usage
-
-1. [Create a JHipster app](https://www.jhipster.tech/creating-an-app/) using `yo jhipster`, or `jhipster`
-2. Run coverb on your JHipster app path:
-
-```
-yo jhipster-coverb
-```
-3. Select your [cover type](#cover-type):
-```
-? Which type do you prefer? (Use arrow keys)
-❯ default 
-  resume 
-  company 
-```
-4. Select your cover name:
-```
-? Which name do you prefer? (myOwnResume) 
-```
-
-## Demo
-
-To run coverb demo on a JHipster generated application:
-
+#
+# Start demo
+To run coverb demo on your application:
 ```
 yo jhipster-coverb:demo
 ```
+#
+# Live demo
+<p align="center">
+    <a href="https://coverb-demo-angular.herokuapp.com/">
+        <img width= "256px" style="margin:25px 50px"
+        src="content/qr-angular-demo.png"></a>
+    <a href="https://coverb-demo-react.herokuapp.com/">
+        <img width= "256px" style="margin:25px 50px"
+        src="content/qr-react-demo.png"></a>
+    </p>
 
-## Live demo
+#
+# License
 
-See our [demo](https://generator-jhispter-coverb-demo.herokuapp.com/) on heroku
-
-## Contributing
-
-You can add your own cover and help us to grow
-
-## License
-
-Apache-2.0 © -> Contact developer: Wilever Gómez -> wilevergomez@gmail.com
-
-## Cover type
-### Resume
-![resume](/generators/app/templates/default/content/images/resume.png)
-### Company
-![company](/generators/app/templates/default/content/images/company.png)
+Apache-2.0 ©
 
 [npm-image]: https://img.shields.io/npm/v/generator-jhipster-coverb.svg
 [npm-url]: https://npmjs.org/package/generator-jhipster-coverb

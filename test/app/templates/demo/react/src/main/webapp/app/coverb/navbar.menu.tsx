@@ -11,7 +11,7 @@ import Company from 'app/coverb/company/component';
 
 const Coverb = props => (
   // tslint:disable-next-line:jsx-self-close
-  <NavDropdown icon="cubes" name="coverb" id="coverb-menu">
+  <NavDropdown icon="cubes" name="Coverb" id="coverb-menu">
     <DropdownItem tag={Link} to="/coverb/default">
       <FontAwesomeIcon icon="cube" />
       &nbsp;Default
