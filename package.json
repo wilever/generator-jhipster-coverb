@@ -1,6 +1,6 @@
 {
   "name": "generator-jhipster-coverb",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A JHipster Module that generates a cover page",
   "keywords": [
     "yeoman-generator",
@@ -28,7 +28,7 @@
   "main": "generators/app/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jhipster-latino/generator-jhipster-coverb.git"
+    "url": "https://github.com/jhipster-latino/generator-jhipster-coverb.git"
   },
   "dependencies": {
     "ajv": "^6.6.1",
