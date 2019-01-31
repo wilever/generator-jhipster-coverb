@@ -1,5 +1,4 @@
 import { AUTHORITIES } from 'app/config/constants';
-
 import Default from 'app/default/component';
 
 const Routes = () => (

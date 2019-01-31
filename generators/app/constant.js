@@ -69,6 +69,7 @@ module.exports = {
         ROUTE_REACT: CLIENT_MAIN_SRC_DIR+'app/',
         HEADER_REACT: CLIENT_MAIN_SRC_DIR+'app/shared/layout/header/',
         NAV_BAR: CLIENT_MAIN_SRC_DIR+'app/layouts/navbar/navbar.component.html',
-        VENDOR: 'src/main/webapp/app/vendor.ts'
+        VENDOR: 'src/main/webapp/app/vendor.ts',
+        ICON: 'src/main/webapp/app/shared/icon'
     }
 };
