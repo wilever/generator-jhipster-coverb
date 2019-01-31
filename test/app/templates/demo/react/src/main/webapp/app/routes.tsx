@@ -1,5 +1,4 @@
 import { AUTHORITIES } from 'app/config/constants';
-
 import Coverb from 'app/coverb';
 
 const Routes = () => (

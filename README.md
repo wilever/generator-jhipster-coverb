@@ -8,6 +8,11 @@
 
 #
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+[![jhipster](https://img.shields.io/badge/jhipster->=5.0.2-blue.svg)](https://shields.io/)
+[![react](https://img.shields.io/badge/react-suported-blue.svg)](https://shields.io/)
+[![angular](https://img.shields.io/badge/angular-suported-blue.svg)](https://shields.io/)
+[![i18n](https://img.shields.io/badge/i18n-suported-orange.svg)](https://shields.io/)
+[![demo](https://img.shields.io/badge/demo-on-<COLOR>.svg)](https://shields.io/)
 
 Coverb is a jhipster module that generates a pages for your jhipster application. To learn more about this module, see [wiki](https://github.com/jhipster-latino/coverb/wiki).
 

@@ -7,7 +7,10 @@
     "jhipster",
     "jhipster-module",
     "jhipster-latino",
-    "coverb"
+    "coverb",
+    "bootstrap",
+    "angular",
+    "react"
   ],
   "homepage": "https://github.com/jhipster-latino/generator-jhispter-coverb",
   "author": {
