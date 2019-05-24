@@ -177,22 +177,33 @@ function addItem(generator) {
  * @param {*} generator 
  */
 function addItemImport(generator) {
-  const file = `${CLIENT_MAIN_SRC_DIR}app/${
-    generator.ROOT_ROUTE
-  }/navbar.menu.tsx`;
-  const pattern = `// jhipster-needle-add-import-to-menu - JHipster will add entities to the menu here`;
-  const content = `import ${_.startCase(generator.COVER_NAME)} from 'app/${
-    generator.ROOT_ROUTE
-  }${_.kebabCase(generator.COVER_NAME)}/component';
-// jhipster-needle-add-import-to-menu - JHipster will add entities to the menu here`;
-  util.replaceContent(
-    {
-      file: file,
-      pattern,
-      content
-    },
-    generator
-  );
+  switch (generator.CLIENT_FRAMEWORK) {
+    case constant.CLIENT_FRAMEWORK.ANGULAR:
+        const file = `${CLIENT_MAIN_SRC_DIR}app/${
+          generator.ROOT_ROUTE
+        }/navbar.menu.tsx`;
+        const pattern = `// jhipster-needle-add-import-to-menu - JHipster will add entities to the menu here`;
+        const content = `import ${_.startCase(generator.COVER_NAME)} from 'app/${
+          generator.ROOT_ROUTE
+        }${_.kebabCase(generator.COVER_NAME)}/component';
+      // jhipster-needle-add-import-to-menu - JHipster will add entities to the menu here`;
+        util.replaceContent(
+          {
+            file: file,
+            pattern,
+            content
+          },
+          generator
+        );
+        break;
+    case constant.CLIENT_FRAMEWORK.REACT:
+        // TODO:
+        break;
+    default:
+        break;
+}
+
+ 
 }
 /**
  * Add route
