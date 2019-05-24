@@ -208,11 +208,11 @@ async function updateRoute(generator) {
  */
 function addRoute(generator) {
   const file = constant.PATH.ROUTE_REACT + `routes.tsx`;
-  const pattern = `<ErrorBoundaryRoute path="/" component={Home} />`;
-  const content = `<ErrorBoundaryRoute path="/${_.kebabCase(
+  const pattern = `<Switch>`;
+  const content = `<Switch>
+      <ErrorBoundaryRoute path="/${_.kebabCase(
     generator.ROOT_ROUTE
-  )}" component={${_.startCase(generator.ROOT_ROUTE)}} />
-      <ErrorBoundaryRoute path="/" component={Home} />`;
+  )}" component={${_.startCase(generator.ROOT_ROUTE)}} />`;
   util.replaceContent(
     {
       file: file,
