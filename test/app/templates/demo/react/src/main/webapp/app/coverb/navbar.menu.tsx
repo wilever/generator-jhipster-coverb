@@ -1,13 +1,22 @@
 import React from 'react';
-import { DropdownItem } from 'reactstrap';
+import { DropdownItem, UncontrolledDropdown, DropdownToggle, DropdownMenu } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { NavLink as Link } from 'react-router-dom';
 import { NavDropdown } from 'app/shared/layout/header/header-components';
-import Default from 'app/coverb/default/component';
-import Resume from 'app/coverb/resume/component';
-import Company from 'app/coverb/company/component';
 // jhipster-needle-add-import-to-menu - JHipster will add entities to the menu here
+
+const NavDropdown = props => (
+  <UncontrolledDropdown nav inNavbar id={props.id}>
+    <DropdownToggle nav caret className="d-flex align-items-center">
+      <FontAwesomeIcon icon={props.icon} />
+      <span>{props.name}</span>
+    </DropdownToggle>
+    <DropdownMenu right style={props.style}>
+      {props.children}
+    </DropdownMenu>
+  </UncontrolledDropdown>
+);
 
 const Coverb = props => (
   // tslint:disable-next-line:jsx-self-close
