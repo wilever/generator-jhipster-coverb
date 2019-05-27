@@ -436,9 +436,9 @@ async function updateRouteByCover(generator){
  */
 function addRouteByCover(generator) {
     const file = constant.PATH.ROUTE_REACT+`routes.tsx`;
-    const pattern = `<ErrorBoundaryRoute path="/" component={Home} />`;
-    const content = `<ErrorBoundaryRoute path="/${_.kebabCase(generator.COVER_NAME)}" component={${_.startCase(generator.COVER_NAME)}} />
-      <ErrorBoundaryRoute path="/" component={Home} />`
+    const pattern = `<Switch>`;
+    const content = `<Switch>
+      <ErrorBoundaryRoute path="/${_.kebabCase(generator.COVER_NAME)}" component={${_.startCase(generator.COVER_NAME)}} />`
     replaceContent({
         file: file,
         pattern,

@@ -16,6 +16,10 @@
 
 Coverb is a jhipster module that generates a pages for your jhipster application. To learn more about this module, see [wiki](https://github.com/jhipster-latino/coverb/wiki).
 
+# Changes
+
+- v1.0.9: Solve react problems for Jhipster6 
+
 # Prerequisites
 
 - As this is a [JHipster](http://www.jhipster.tech/) module, we expect you to have an existing [JHipster app](https://www.jhipster.tech/creating-an-app/).
