@@ -1,5 +1,5 @@
 import React from 'react';
-import { DropdownItem, UncontrolledDropdown, DropdownToggle, DropdownMenu} from 'reactstrap';
+import { DropdownItem, UncontrolledDropdown, DropdownToggle, DropdownMenu } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { NavLink as Link } from 'react-router-dom';
