@@ -7,4 +7,4 @@ import './icon_loader';
   styleUrls: ['style.scss']
 })
 
-export class CompanyComponent { }
+export class CompanyTestComponent { }

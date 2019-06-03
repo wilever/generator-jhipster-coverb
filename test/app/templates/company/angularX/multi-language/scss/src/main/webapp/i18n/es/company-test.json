@@ -1,7 +1,7 @@
 {
-  "company": {
+  "company-test": {
     "page": {
-      "title": "[ES] Company"
+      "title": "[ES] Company Test"
     },
     "name": "[ES] Jhipster latino",
     "description": "[ES] Development tools and courses for build better jhipster applications",

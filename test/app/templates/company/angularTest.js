@@ -10,7 +10,7 @@ const expectations = require('./expectations');
 const GENERATOR = '../../../../generators/app';
 const COVER_TYPE = expectations.COVER_TYPE;
 const CLIENT_FRAMEWORK = core.constant.CLIENT_FRAMEWORK.ANGULAR;
-const ROOT_ROUTE = core.constant.ROOT_ROUTE;
+const ROOT_ROUTE = core.constant.ROOT_ROUTE_TEST;
 
 let expectedFiles;
 let baseApp;
@@ -30,7 +30,8 @@ describe(`COVER_TYPE: ${COVER_TYPE} CLIENT_FRAMEWORK: ${CLIENT_FRAMEWORK}\n`, ()
             expectedFiles = expectations.files(
               CLIENT_FRAMEWORK,
               TEST_CASE,
-              ROOT_ROUTE
+              ROOT_ROUTE,
+              COVER_TYPE+core.constant.COVER_NAME_SUFFIX_TEST
             );
             resultPath = `${__dirname}/${CLIENT_FRAMEWORK}/${TEST_CASE}/`;
             fse.copySync(path.join(__dirname, `${baseApp}`), dir);
@@ -40,7 +41,7 @@ describe(`COVER_TYPE: ${COVER_TYPE} CLIENT_FRAMEWORK: ${CLIENT_FRAMEWORK}\n`, ()
           })
           .withPrompts({
             coverType: COVER_TYPE,
-            coverName: COVER_TYPE
+            coverName: COVER_TYPE+core.constant.COVER_NAME_SUFFIX_TEST
           })
           .on('end', () => {
             done();
