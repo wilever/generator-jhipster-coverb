@@ -1,7 +1,7 @@
 {
   "<%=_.kebabCase(COVER_NAME)%>": {
     "page": {
-      "title": "<%=currentLanguagePrefix%><%=_.startCase(_.kebabCase(COVER_NAME))%>"
+      "title": "<%=currentLanguagePrefix%><%=_.upperFirst(_.camelCase(COVER_NAME))%>"
     },
     "name": "<%=currentLanguagePrefix%>Jhipster latino",
     "description": "<%=currentLanguagePrefix%>Development tools and courses for build better jhipster applications",

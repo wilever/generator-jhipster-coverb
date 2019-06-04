@@ -10,7 +10,7 @@ export class <%=_.upperFirst(_.camelCase(COVER_NAME))%> extends Component {
   render() {
     return (
       <div>
-        <section id="resume">
+        <section id="<%=_.kebabCase(COVER_NAME)%>">
           <div className="principal container-fluid">
             <Row>
               {/* My personal data*/}

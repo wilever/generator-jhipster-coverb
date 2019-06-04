@@ -1,3 +1,3 @@
-describe('Company Test Tests', () => {
+describe('CompanyTest Tests', () => {
 
 });

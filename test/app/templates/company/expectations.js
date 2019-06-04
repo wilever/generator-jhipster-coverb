@@ -99,9 +99,9 @@ function files(CLIENT_FRAMEWORK, TEST_CASE, ROOT_ROUTE, COVER_NAME) {
         `${CLIENT_MAIN_SRC_DIR}i18n`,
       ],
       I18N: [
-        `${CLIENT_MAIN_SRC_DIR}i18n/en/${COVER_TYPE}.json`,
-        `${CLIENT_MAIN_SRC_DIR}i18n/es/${COVER_TYPE}.json`,
-        `${CLIENT_MAIN_SRC_DIR}i18n/fr/${COVER_TYPE}.json`,
+        `${CLIENT_MAIN_SRC_DIR}i18n/en/${COVER_NAME}.json`,
+        `${CLIENT_MAIN_SRC_DIR}i18n/es/${COVER_NAME}.json`,
+        `${CLIENT_MAIN_SRC_DIR}i18n/fr/${COVER_NAME}.json`,
         `${CLIENT_MAIN_SRC_DIR}i18n/en/global.json`,
         `${CLIENT_MAIN_SRC_DIR}i18n/es/global.json`,
         `${CLIENT_MAIN_SRC_DIR}i18n/fr/global.json`,

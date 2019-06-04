@@ -10,7 +10,7 @@ const expectations = require('./expectations');
 const GENERATOR = '../../../../generators/app';
 const COVER_TYPE = expectations.COVER_TYPE;
 const CLIENT_FRAMEWORK = core.constant.CLIENT_FRAMEWORK.ANGULAR;
-const ROOT_ROUTE = core.constant.ROOT_ROUTE_TEST;
+const ROOT_ROUTE = core.constant.ROOT_ROUTE;
 
 let expectedFiles;
 let baseApp;

@@ -1,0 +1,56 @@
+/* style.css */
+#default-test {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#default-test .jumbotron {
+  background: #3e8acc;
+  color: whitesmoke;
+  padding: 100px 25px;
+}
+
+#default-test .container-fluid {
+  padding: 60px 25px;
+}
+
+#default-test .bg-gray {
+  background: lightgray;
+}
+
+#default-test .icon {
+  font-size: 150px;
+  color: #3e8acc;
+  margin: 5%;
+}
+
+#default-test .thumbnail {
+  padding: 0 0 15px 0;
+  border: solid #3e8acc;
+  border-radius: 0;
+  background: white;
+}
+
+#default-test .thumbnail span {
+  display: inline-block;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 2% auto;
+}
+
+/* Images*/
+
+#mini-resume {
+  background-image: url('/content/images/resume.png');
+
+  width: 100%;
+  height: 250px;
+  background-size: contain;
+}
+
+#mini-company {
+  background-image: url('/content/images/company.png');
+  width: 100%;
+  height: 250px;
+  background-size: contain;
+}

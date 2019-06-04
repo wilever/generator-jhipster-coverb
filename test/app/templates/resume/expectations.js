@@ -16,9 +16,9 @@ module.exports = {
  *
  * @param {string} ROOT_ROUTE kebabCase and lowerCase
  */
-function files(CLIENT_FRAMEWORK, TEST_CASE, ROOT_ROUTE) {
-  const FILE_PATH = `${CLIENT_MAIN_SRC_DIR}app/${ROOT_ROUTE}${COVER_TYPE}`;
-  const TEST_PATH = `${CLIENT_TEST_SRC_DIR}spec/app/${COVER_TYPE}`;
+function files(CLIENT_FRAMEWORK, TEST_CASE, ROOT_ROUTE, COVER_NAME) {
+  const FILE_PATH = `${CLIENT_MAIN_SRC_DIR}app/${ROOT_ROUTE}${COVER_NAME}`;
+  const TEST_PATH = `${CLIENT_TEST_SRC_DIR}spec/app/${COVER_NAME}`;
   switch (CLIENT_FRAMEWORK) {
     case constant.CLIENT_FRAMEWORK.ANGULAR:
       return {
@@ -118,9 +118,9 @@ function files(CLIENT_FRAMEWORK, TEST_CASE, ROOT_ROUTE) {
         ],
         I18N_SKIPPED: [`${CLIENT_MAIN_SRC_DIR}i18n`],
         I18N: [
-          `${CLIENT_MAIN_SRC_DIR}i18n/en/${COVER_TYPE}.json`,
-          `${CLIENT_MAIN_SRC_DIR}i18n/es/${COVER_TYPE}.json`,
-          `${CLIENT_MAIN_SRC_DIR}i18n/fr/${COVER_TYPE}.json`,
+          `${CLIENT_MAIN_SRC_DIR}i18n/en/${COVER_NAME}.json`,
+          `${CLIENT_MAIN_SRC_DIR}i18n/es/${COVER_NAME}.json`,
+          `${CLIENT_MAIN_SRC_DIR}i18n/fr/${COVER_NAME}.json`,
           `${CLIENT_MAIN_SRC_DIR}i18n/en/global.json`,
           `${CLIENT_MAIN_SRC_DIR}i18n/es/global.json`,
           `${CLIENT_MAIN_SRC_DIR}i18n/fr/global.json`
@@ -221,9 +221,9 @@ function files(CLIENT_FRAMEWORK, TEST_CASE, ROOT_ROUTE) {
       ],
       I18N_SKIPPED: [`${CLIENT_MAIN_SRC_DIR}i18n`],
       I18N: [
-        `${CLIENT_MAIN_SRC_DIR}i18n/en/${COVER_TYPE}.json`,
-        `${CLIENT_MAIN_SRC_DIR}i18n/es/${COVER_TYPE}.json`,
-        `${CLIENT_MAIN_SRC_DIR}i18n/fr/${COVER_TYPE}.json`,
+        `${CLIENT_MAIN_SRC_DIR}i18n/en/${COVER_NAME}.json`,
+        `${CLIENT_MAIN_SRC_DIR}i18n/es/${COVER_NAME}.json`,
+        `${CLIENT_MAIN_SRC_DIR}i18n/fr/${COVER_NAME}.json`,
         `${CLIENT_MAIN_SRC_DIR}i18n/en/global.json`,
         `${CLIENT_MAIN_SRC_DIR}i18n/es/global.json`,
         `${CLIENT_MAIN_SRC_DIR}i18n/fr/global.json`

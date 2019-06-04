@@ -7,7 +7,7 @@ export const <%=_.toUpper(_.snakeCase(COVER_NAME))%>_ROUTE: Route = {
   component: <%=_.upperFirst(_.camelCase(COVER_NAME))%>Component,
   data: {
     authorities: [],
-    pageTitle: '<%=ENABLE_TRANSLATION ? _.kebabCase(COVER_NAME) +`.page.title` : _.startCase(COVER_NAME)%>'
+    pageTitle: '<%=ENABLE_TRANSLATION ? _.kebabCase(COVER_NAME) +`.page.title` : _.upperFirst(_.camelCase(COVER_NAME))%>'
   },
   canActivate: [UserRouteAccessService]
 };

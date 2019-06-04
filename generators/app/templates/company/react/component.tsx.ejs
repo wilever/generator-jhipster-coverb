@@ -10,22 +10,22 @@ export class <%=_.upperFirst(_.camelCase(COVER_NAME))%> extends Component {
   render() {
     return (
       <div>
-        <section id="company">
+        <section id="<%=_.kebabCase(COVER_NAME)%>">
           <div className="jumbotron text-center">
             <span id="logo-company" />
             <h1>
-              <%-ENABLE_TRANSLATION ? `<Translate contentKey="company.name">Jhipster Latino</Translate>`:`Jhipster Latino`%>
+              <%-ENABLE_TRANSLATION ? `<Translate contentKey="${_.kebabCase(COVER_NAME)}.name">Jhipster Latino</Translate>`:`Jhipster Latino`%>
             </h1>
             <p>
-              <%-ENABLE_TRANSLATION ? `<Translate contentKey="company.description">Development tools and courses for build better jhipster applications</Translate>`:`Development tools and courses for build better jhipster applications`%>
+              <%-ENABLE_TRANSLATION ? `<Translate contentKey="${_.kebabCase(COVER_NAME)}.description">Development tools and courses for build better jhipster applications</Translate>`:`Development tools and courses for build better jhipster applications`%>
             </p>
           </div>
           <div className="container-fluid text-center">
             <h2>
-              <%-ENABLE_TRANSLATION ? `<Translate contentKey="company.service.title">Services</Translate>`:`Services`%>
+              <%-ENABLE_TRANSLATION ? `<Translate contentKey="${_.kebabCase(COVER_NAME)}.service.title">Services</Translate>`:`Services`%>
             </h2>
             <p>
-              <%-ENABLE_TRANSLATION ? `<Translate contentKey="company.service.description">What we offer?</Translate>`:`What we offer?`%>
+              <%-ENABLE_TRANSLATION ? `<Translate contentKey="${_.kebabCase(COVER_NAME)}.service.description">What we offer?</Translate>`:`What we offer?`%>
             </p>
             <br />
             <Row>
@@ -48,10 +48,10 @@ export class <%=_.upperFirst(_.camelCase(COVER_NAME))%> extends Component {
           </div>
           <div className="container-fluid text-center bg-gray">
             <h2>
-              <%-ENABLE_TRANSLATION ? `<Translate contentKey="company.portafolio.title">Portafolio</Translate>`:`Portafolio`%>
+              <%-ENABLE_TRANSLATION ? `<Translate contentKey="${_.kebabCase(COVER_NAME)}.portafolio.title">Portafolio</Translate>`:`Portafolio`%>
             </h2>
             <p>
-              <%-ENABLE_TRANSLATION ? `<Translate contentKey="company.portafolio.description">What did we already created?</Translate>`:`What did we already created?`%>
+              <%-ENABLE_TRANSLATION ? `<Translate contentKey="${_.kebabCase(COVER_NAME)}.portafolio.description">What did we already created?</Translate>`:`What did we already created?`%>
             </p>
             <br />
             <Row className="text-center">
@@ -82,10 +82,10 @@ export class <%=_.upperFirst(_.camelCase(COVER_NAME))%> extends Component {
           <div className="container-fluid">
             <div className="text-center">
               <h2>
-                <%-ENABLE_TRANSLATION ? `<Translate contentKey="company.pricing.title">Pricing</Translate>`:`Pricing`%>
+                <%-ENABLE_TRANSLATION ? `<Translate contentKey="${_.kebabCase(COVER_NAME)}.pricing.title">Pricing</Translate>`:`Pricing`%>
               </h2>
               <p>
-                <%-ENABLE_TRANSLATION ? `<Translate contentKey="company.pricing.description">Choose a payment plan that works for you</Translate>`:`Choose a payment plan that works for you`%>
+                <%-ENABLE_TRANSLATION ? `<Translate contentKey="${_.kebabCase(COVER_NAME)}.pricing.description">Choose a payment plan that works for you</Translate>`:`Choose a payment plan that works for you`%>
               </p>
               <br />
             </div>
