@@ -1,11 +1,11 @@
-<section id="default">
+<section id="<%=_.kebabCase(COVER_NAME)%>">
     <div class="jumbotron text-center">
-        <%-ENABLE_TRANSLATION ? `<h1 jhiTranslate="default.title">`:`<h1>`%>What is coverb?</h1>
-        <%-ENABLE_TRANSLATION ? `<p jhiTranslate="default.description">`:`<p>`%>It is a page generator for jhipster application</p>
+        <%-ENABLE_TRANSLATION ? `<h1 jhiTranslate="${_.kebabCase(COVER_NAME)}.title">`:`<h1>`%>What is coverb?</h1>
+        <%-ENABLE_TRANSLATION ? `<p jhiTranslate="${_.kebabCase(COVER_NAME)}.description">`:`<p>`%>It is a page generator for jhipster application</p>
     </div>
     <div class="container-fluid text-center">
-        <%-ENABLE_TRANSLATION ? `<h2 jhiTranslate="default.feature.title">`:`<h2>`%>Features</h2>
-        <%-ENABLE_TRANSLATION ? `<p jhiTranslate="default.feature.description">`:`<p>`%>What we offer?</p>
+        <%-ENABLE_TRANSLATION ? `<h2 jhiTranslate="${_.kebabCase(COVER_NAME)}.feature.title">`:`<h2>`%>Features</h2>
+        <%-ENABLE_TRANSLATION ? `<p jhiTranslate="${_.kebabCase(COVER_NAME)}.feature.description">`:`<p>`%>What we offer?</p>
         <br>
         <div class="row">
             <div class="col-sm-4">
@@ -43,8 +43,8 @@
         </div>
     </div>
     <div class="container-fluid text-center bg-gray">
-        <%-ENABLE_TRANSLATION ? `<h2 jhiTranslate="default.portafolio.title">`:`<h2>`%>Portafolio</h2>
-        <%-ENABLE_TRANSLATION ? `<p jhiTranslate="default.portafolio.description">`:`<p>`%>What did we already created?</p>
+        <%-ENABLE_TRANSLATION ? `<h2 jhiTranslate="${_.kebabCase(COVER_NAME)}.portafolio.title">`:`<h2>`%>Portafolio</h2>
+        <%-ENABLE_TRANSLATION ? `<p jhiTranslate="${_.kebabCase(COVER_NAME)}.portafolio.description">`:`<p>`%>What did we already created?</p>
         <br>
         <div class="row text-center">
             <div class="col-sm-6">

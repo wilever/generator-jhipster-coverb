@@ -1,7 +1,7 @@
 {
   "global": {
     "menu": {
-      "default": "Default",
+      "default-test": "DefaultTest",
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)"
     }
   }

@@ -1,11 +1,11 @@
 import { AUTHORITIES } from 'app/config/constants';
-import Resume from 'app/resume/component';
+import ResumeTest from 'app/resume-test/component';
 
 const Routes = () => (
   <div className="view-routes">
     <ErrorBoundaryRoute path="/login" component={Login} />
     <Switch>
-      <ErrorBoundaryRoute path="/resume" component={Resume} />
+      <ErrorBoundaryRoute path="/resume-test" component={ResumeTest} />
       <ErrorBoundaryRoute path="/logout" component={Logout} />
       <ErrorBoundaryRoute path="/register" component={Register} />
       <ErrorBoundaryRoute path="/activate/:key?" component={Activate} />

@@ -10,21 +10,21 @@ export class <%=_.upperFirst(_.camelCase(COVER_NAME))%> extends Component {
   render() {
     return (
       <div>
-        <section id="default">
+        <section id="<%=_.kebabCase(COVER_NAME)%>">
           <div className="jumbotron text-center">
             <h1>
-              <%-ENABLE_TRANSLATION ? `<Translate contentKey="default.title">What is coverb?</Translate>`:`What is coverb?`%>
+              <%-ENABLE_TRANSLATION ? `<Translate contentKey="${_.kebabCase(COVER_NAME)}.title">What is coverb?</Translate>`:`What is coverb?`%>
             </h1>
             <p>
-              <%-ENABLE_TRANSLATION ? `<Translate contentKey="default.description">It is a page generator for jhipster application</Translate>`:`It is a page generator for jhipster application`%>
+              <%-ENABLE_TRANSLATION ? `<Translate contentKey="${_.kebabCase(COVER_NAME)}.description">It is a page generator for jhipster application</Translate>`:`It is a page generator for jhipster application`%>
             </p>
           </div>
           <div className="container-fluid text-center">
             <h2>
-              <%-ENABLE_TRANSLATION ? `<Translate contentKey="default.feature.title">Features</Translate>`:`Features`%>
+              <%-ENABLE_TRANSLATION ? `<Translate contentKey="${_.kebabCase(COVER_NAME)}.feature.title">Features</Translate>`:`Features`%>
             </h2>
             <p>
-              <%-ENABLE_TRANSLATION ? `<Translate contentKey="default.feature.description">What we offer?</Translate>`:`What we offer?`%>
+              <%-ENABLE_TRANSLATION ? `<Translate contentKey="${_.kebabCase(COVER_NAME)}.feature.description">What we offer?</Translate>`:`What we offer?`%>
             </p>
             <br />
             <Row>
@@ -64,10 +64,10 @@ export class <%=_.upperFirst(_.camelCase(COVER_NAME))%> extends Component {
           </div>
           <div className="container-fluid text-center bg-gray">
             <h2>
-              <%-ENABLE_TRANSLATION ? `<Translate contentKey="default.portafolio.title">Portafolio</Translate>`:`Portafolio`%>
+              <%-ENABLE_TRANSLATION ? `<Translate contentKey="${_.kebabCase(COVER_NAME)}.portafolio.title">Portafolio</Translate>`:`Portafolio`%>
             </h2>
             <p>
-              <%-ENABLE_TRANSLATION ? `<Translate contentKey="default.portafolio.description">What did we already created?</Translate>`:`What did we already created?`%>
+              <%-ENABLE_TRANSLATION ? `<Translate contentKey="${_.kebabCase(COVER_NAME)}.portafolio.description">What did we already created?</Translate>`:`What did we already created?`%>
             </p>
             <br />
             <Row>
@@ -98,4 +98,4 @@ export class <%=_.upperFirst(_.camelCase(COVER_NAME))%> extends Component {
   }
 }
 
-export default <%=_.upperFirst(_.camelCase(COVER_NAME))%>;
+export <%=_.upperFirst(_.camelCase(COVER_NAME))%>;

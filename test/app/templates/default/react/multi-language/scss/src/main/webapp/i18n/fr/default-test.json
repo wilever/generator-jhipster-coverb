@@ -1,0 +1,17 @@
+{
+  "default-test": {
+    "page": {
+      "title": "[FR] DefaultTest"
+    },
+    "title": "[FR] What is coverb?",
+    "description": "[FR] It is a page generator for jhipster application",
+    "feature": {
+      "title": "[FR] Features",
+      "description": "[FR] What we offer?"
+    },
+    "portafolio": {
+      "title": "[FR] Portafolio",
+      "description": "[FR] What did we already created?"
+    }
+  }
+}

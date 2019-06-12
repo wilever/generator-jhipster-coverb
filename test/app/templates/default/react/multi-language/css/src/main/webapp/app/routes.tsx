@@ -1,11 +1,11 @@
 import { AUTHORITIES } from 'app/config/constants';
-import Default from 'app/default/component';
+import DefaultTest from 'app/default-test/component';
 
 const Routes = () => (
   <div className="view-routes">
     <ErrorBoundaryRoute path="/login" component={Login} />
     <Switch>
-      <ErrorBoundaryRoute path="/default" component={Default} />
+      <ErrorBoundaryRoute path="/default-test" component={DefaultTest} />
       <ErrorBoundaryRoute path="/logout" component={Logout} />
       <ErrorBoundaryRoute path="/register" component={Register} />
       <ErrorBoundaryRoute path="/activate/:key?" component={Activate} />

@@ -1,11 +1,11 @@
 ...
 
-import { JhipsterResumeModule } from 'app/resume/module';
+import { JhipsterResumeTestModule } from 'app/resume-test/module';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 @NgModule({
   imports: [
     ...
-    JhipsterResumeModule,
+    JhipsterResumeTestModule,
     // jhipster-needle-angular-add-module JHipster will add new module here
   ],
   declarations: [

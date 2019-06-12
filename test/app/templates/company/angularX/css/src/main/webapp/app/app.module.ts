@@ -1,11 +1,11 @@
 ...
 
-import { JhipsterCompanyModule } from 'app/company/module';
+import { JhipsterCompanyTestModule } from 'app/company-test/module';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 @NgModule({
   imports: [
     ...
-    JhipsterCompanyModule,
+    JhipsterCompanyTestModule,
     // jhipster-needle-angular-add-module JHipster will add new module here
   ],
   declarations: [

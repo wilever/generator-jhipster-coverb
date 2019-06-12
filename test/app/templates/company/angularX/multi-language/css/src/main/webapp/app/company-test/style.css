@@ -1,0 +1,95 @@
+/* style.css */
+#company-test {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#company-test .jumbotron {
+    background: #3e8acc;
+    color: whitesmoke;
+    padding: 100px 25px;
+}
+
+#company-test .container-fluid {
+    padding: 60px 25px;
+}
+
+#company-test .bg-gray {
+    background: lightgray;
+}
+
+#company-test fa-icon {
+    font-size: 150px;
+    color: #3e8acc;
+}
+
+#company-test .thumbnail {
+    padding: 0 0 15px 0;
+    border: solid #3e8acc;
+    border-radius: 0;
+    background: white;
+}
+
+#company-test .thumbnail img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+}
+
+#company-test .panel {
+    border: solid #3e8acc;
+    border-radius: 0;
+    transition: box-shadow 0.5s;
+}
+
+#company-test .panel:hover {
+    box-shadow: 5px 0px 40px rgba(0, 0, 0, 0.2);
+}
+
+#company-test .panel-footer .btn:hover {
+    border: 1px solid #3e8acc;
+    background-color: #fff !important;
+    color: #3e8acc;
+}
+
+#company-test .panel-heading {
+    color: #fff !important;
+    background-color: #3e8acc !important;
+    padding: 25px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+#company-test .panel-footer {
+    background-color: #fff !important;
+}
+
+#company-test .panel-footer h3 {
+    font-size: 32px;
+}
+
+#company-test .panel-footer h4 {
+    color: #aaa;
+    font-size: 14px;
+}
+
+#company-test .panel-footer .btn {
+    margin: 15px 0;
+    color: #fff;
+    background-color: #3e8acc;
+}
+
+/* Images */
+
+#company-test #logo {
+    background: url('/content/images/logo/icons/logo-alternate.png') no-repeat center center;
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    background-size: 105%;
+    border-radius: 50%;
+    background-color: #fff;
+    margin: 5% auto;
+}

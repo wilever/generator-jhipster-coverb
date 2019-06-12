@@ -1,11 +1,11 @@
 import { AUTHORITIES } from 'app/config/constants';
-import Company from 'app/company/component';
+import CompanyTest from 'app/company-test/component';
 
 const Routes = () => (
   <div className="view-routes">
     <ErrorBoundaryRoute path="/login" component={Login} />
     <Switch>
-      <ErrorBoundaryRoute path="/company" component={Company} />
+      <ErrorBoundaryRoute path="/company-test" component={CompanyTest} />
       <ErrorBoundaryRoute path="/logout" component={Logout} />
       <ErrorBoundaryRoute path="/register" component={Register} />
       <ErrorBoundaryRoute path="/activate/:key?" component={Activate} />
