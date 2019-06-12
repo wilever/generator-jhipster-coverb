@@ -11,6 +11,8 @@ module.exports = {
         SCSS_MULTI_LANGUAGE: 'multi-language/scss'
     },
     ROOT_ROUTE: '',
+    ROOT_ROUTE_TEST: 'my/own/path/',
+    COVER_NAME_SUFFIX_TEST: '-test',
     DEMO_ROOT_ROUTE: 'coverb/',
     DEMO_MENU_NAME: 'coverb',
     I18N_SUPPORT: {

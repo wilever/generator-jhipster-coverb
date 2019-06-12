@@ -1,6 +1,6 @@
 {
   "name": "generator-jhipster-coverb",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "A JHipster Module that generates a cover page",
   "keywords": [
     "yeoman-generator",

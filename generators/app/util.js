@@ -170,7 +170,7 @@ function autoGenerateI18nMenu(COVER_NAME, generator) {
         // Add menu to global.json
         updateFile(
             `${CLIENT_MAIN_SRC_DIR}i18n/${language}/global.json`,
-            `"${_.kebabCase(COVER_NAME)}": "${generator.currentLanguagePrefix}${_.startCase(COVER_NAME)}",`,
+            `"${_.kebabCase(COVER_NAME)}": "${generator.currentLanguagePrefix}${_.upperFirst(_.camelCase(COVER_NAME))}",`,
             constant.NEEDLE.MENU_ADD_ELEMENT,
             generator
         );
@@ -238,7 +238,7 @@ function navbarItem(ITEM_NAME, NAV_BAR_ICON, ROOT_ROUTE, ENABLE_TRANSLATION, CLI
         `|<li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
         |                <a class="nav-link" routerLink="${ROOT_ROUTE}${_.kebabCase(ITEM_NAME)}" (click)="collapseNavbar()">
         |                    <fa-icon [icon]="'${NAV_BAR_ICON}'" [fixedWidth]="true"></fa-icon>
-        |                    <span${ENABLE_TRANSLATION ? ` jhiTranslate="global.menu.${_.kebabCase(ITEM_NAME)}"` : ''}>${_.startCase(ITEM_NAME)}</span>
+        |                    <span${ENABLE_TRANSLATION ? ` jhiTranslate="global.menu.${_.kebabCase(ITEM_NAME)}"` : ''}>${_.upperFirst(_.camelCase(ITEM_NAME))}</span>
         |                </a>
         |            </li>`;
                 break;
@@ -266,7 +266,7 @@ function navbarMenu(MENU_NAME, NAV_BAR_ICON, ENABLE_TRANSLATION, CLIENT_FRAMEWOR
         |                <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="${_.kebabCase(MENU_NAME)}">
         |                    <span>
         |                        <fa-icon [icon]="'${NAV_BAR_ICON}'"></fa-icon>
-        |                        <span${ENABLE_TRANSLATION ? ` jhiTranslate="global.menu.${_.kebabCase(MENU_NAME)}"` : ''}>${_.startCase(MENU_NAME)}</span>
+        |                        <span${ENABLE_TRANSLATION ? ` jhiTranslate="global.menu.${_.kebabCase(MENU_NAME)}"` : ''}>${_.upperFirst(_.camelCase(MENU_NAME))}</span>
         |                    </span>
         |                </a>
         |                <ul class="dropdown-menu" ngbDropdownMenu>
@@ -298,7 +298,7 @@ function navbarMenuItem(ITEM_NAME, NAV_BAR_ICON, ROOT_ROUTE, ENABLE_TRANSLATION,
             `|<li>
             |                    <a class="dropdown-item" routerLink="${ROOT_ROUTE}${_.kebabCase(ITEM_NAME)}" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
             |                        <fa-icon [icon]="'${NAV_BAR_ICON}'" [fixedWidth]="true"></fa-icon>
-            |                        <span${ENABLE_TRANSLATION ? ` jhiTranslate="${_.kebabCase(ITEM_NAME)}.page.title"` : ''}>${_.startCase(ITEM_NAME)}</span>
+            |                        <span${ENABLE_TRANSLATION ? ` jhiTranslate="${_.kebabCase(ITEM_NAME)}.page.title"` : ''}>${_.upperFirst(_.camelCase(ITEM_NAME))}</span>
             |                    </a>
             |                </li>`;
             break;
@@ -438,7 +438,7 @@ function addRouteByCover(generator) {
     const file = constant.PATH.ROUTE_REACT+`routes.tsx`;
     const pattern = `<Switch>`;
     const content = `<Switch>
-      <ErrorBoundaryRoute path="/${_.kebabCase(generator.COVER_NAME)}" component={${_.startCase(generator.COVER_NAME)}} />`
+      <ErrorBoundaryRoute path="/${_.kebabCase(generator.COVER_NAME)}" component={${_.upperFirst(_.camelCase(generator.COVER_NAME))}} />`
     replaceContent({
         file: file,
         pattern,
@@ -453,7 +453,7 @@ function addRouteImportByCover(generator) {
     const file = constant.PATH.ROUTE_REACT+`routes.tsx`;
     const pattern = `import { AUTHORITIES } from 'app/config/constants';`;
     const content = `import { AUTHORITIES } from 'app/config/constants';
-import ${_.startCase(generator.COVER_NAME)} from 'app/${generator.ROOT_ROUTE}${_.kebabCase(generator.COVER_NAME)}/component';`;
+import ${_.upperFirst(_.camelCase(generator.COVER_NAME))} from 'app/${generator.ROOT_ROUTE}${_.kebabCase(generator.COVER_NAME)}/component';`;
     replaceContent({
         file: file,
         pattern,
@@ -476,7 +476,7 @@ function addHeaderByCover(generator) {
     const file = constant.PATH.HEADER_REACT+`header.tsx`;
     const pattern = `<Home />`;
     const content = `<Home />
-              <${_.startCase(generator.COVER_NAME)} />`
+              <${_.upperFirst(_.camelCase(generator.COVER_NAME))} />`
     replaceContent({
         file: file,
         pattern,
@@ -491,7 +491,7 @@ function addHeaderImportByCover(generator) {
     const file = constant.PATH.HEADER_REACT+`header.tsx`;
     const pattern = `import React from 'react';`;
     const content = `import React from 'react';
-import ${_.startCase(generator.COVER_NAME)} from 'app/${generator.ROOT_ROUTE}${_.kebabCase(generator.COVER_NAME)}/navbar.item';`;
+import ${_.upperFirst(_.camelCase(generator.COVER_NAME))} from 'app/${generator.ROOT_ROUTE}${_.kebabCase(generator.COVER_NAME)}/navbar.item';`;
     replaceContent({
         file: file,
         pattern,

@@ -70,10 +70,16 @@ To update this module:
 yarn global upgrade generator-jhipster-coverb
 ```
 #
-# Start demo
+# Options
+## Install demo
 To run coverb demo on your application:
 ```
 yo jhipster-coverb:demo
+```
+## Custom path
+To add your custom root path use:
+```
+yo jhipster-coverb --root 'my/custom/path'
 ```
 #
 # Live demo

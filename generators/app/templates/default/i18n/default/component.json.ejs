@@ -1,7 +1,7 @@
 {
   "<%=_.kebabCase(COVER_NAME)%>": {
     "page": {
-      "title": "<%=currentLanguagePrefix%><%=_.startCase(_.kebabCase(COVER_NAME))%>"
+      "title": "<%=currentLanguagePrefix%><%=_.upperFirst(_.camelCase(COVER_NAME))%>"
     },
     "title": "<%=currentLanguagePrefix%>What is coverb?",
     "description": "<%=currentLanguagePrefix%>It is a page generator for jhipster application",
