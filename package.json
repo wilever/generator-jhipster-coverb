@@ -39,7 +39,7 @@
     "lodash": "4.17.10",
     "mkdirp": "0.5.1",
     "semver": "5.5.0",
-    "shelljs": "0.8.2",
+    "shelljs": "0.8.5",
     "tabtab": "2.2.2",
     "yeoman-generator": "3.1.1"
   },
