@@ -3,8 +3,8 @@
      <img src="content/coverb-logo.png"></a></p>   
      <h3 align="center">
         <i>develop by 
-            <a href="https://twitter.com/jhipster_latino/">
-            @jhipster_latino</a></i></h3>
+            <a href="[https://twitter.com/jhipster_latino/](https://www.linkedin.com/in/wilever-gomez/)">
+            Wilever gómez</a></i></h3>
 
 #
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
